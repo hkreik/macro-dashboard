@@ -2,6 +2,7 @@ import os
 import warnings
 from datetime import datetime, timedelta
 
+import numpy as np
 import pandas as pd
 import yfinance as yf
 from dotenv import load_dotenv
@@ -26,7 +27,6 @@ FRED_SERIES = {
     "Consumer Sentiment": "UMCSENT",
 }
 
-# Sector SPDRs + major index ETFs
 SECTOR_ETFS = [
     "SPY", "QQQ", "DIA", "IWM",
     "XLK", "XLF", "XLE", "XLV", "XLI", "XLC",
@@ -35,7 +35,6 @@ SECTOR_ETFS = [
 
 
 def get_all_fred_data() -> pd.DataFrame:
-    """Fetch all FRED indicators into a single DataFrame."""
     frames = {}
     for name, series_id in FRED_SERIES.items():
         frames[name] = fred.get_series(series_id, observation_start=FIVE_YEARS_AGO)
@@ -45,12 +44,10 @@ def get_all_fred_data() -> pd.DataFrame:
 
 
 def compute_yield_spread(df: pd.DataFrame) -> pd.Series:
-    """10-Year minus 2-Year Treasury yield spread."""
     return df["10-Year Treasury"] - df["2-Year Treasury"]
 
 
 def get_sector_data() -> pd.DataFrame:
-    """Download close prices for sector ETFs (5-year window)."""
     tickers = " ".join(SECTOR_ETFS)
     data = yf.download(tickers, start=FIVE_YEARS_AGO, end=TODAY)
     if isinstance(data.columns, pd.MultiIndex):
@@ -61,7 +58,6 @@ def get_sector_data() -> pd.DataFrame:
 
 
 def compute_sector_returns(prices: pd.DataFrame, period: str = "YTD") -> pd.Series:
-    """Compute total return for each ETF over a given period."""
     lookbacks = {
         "1M": timedelta(days=30),
         "3M": timedelta(days=90),
@@ -83,30 +79,127 @@ def compute_sector_returns(prices: pd.DataFrame, period: str = "YTD") -> pd.Seri
     return returns.sort_values(ascending=False)
 
 
-def compute_risk_return(prices: pd.DataFrame, period: str = "1Y") -> pd.DataFrame:
-    """Annualized return and volatility for each ETF over a period."""
-    import numpy as np
-    lookbacks = {
-        "3M": timedelta(days=90),
-        "6M": timedelta(days=182),
-        "1Y": timedelta(days=365),
+def compute_macro_correlations(df: pd.DataFrame, prices: pd.DataFrame) -> pd.DataFrame:
+    """
+    Compute Pearson correlation between each FRED indicator and
+    SPY's monthly return over the same month.
+    Returns a DataFrame with correlation values and interpretation labels.
+    """
+    # Monthly SPY returns
+    spy_monthly = prices["SPY"].resample("ME").last().pct_change().dropna() * 100
+
+    indicator_cols = [
+        "CPI Inflation (Trimmed Mean)",
+        "Federal Funds Rate",
+        "VIX",
+        "High Yield Spread",
+        "Consumer Sentiment",
+        "Unemployment Rate",
+    ]
+
+    # Yield spread computed separately
+    spread = compute_yield_spread(df)
+
+    results = {}
+    for col in indicator_cols:
+        series = df[col].resample("ME").last().dropna()
+        combined = pd.concat([series, spy_monthly], axis=1).dropna()
+        if len(combined) < 12:
+            continue
+        corr = combined.iloc[:, 0].corr(combined.iloc[:, 1])
+        results[col] = round(corr, 3)
+
+    # Add yield spread
+    spread_monthly = spread.resample("ME").last().dropna()
+    combined = pd.concat([spread_monthly, spy_monthly], axis=1).dropna()
+    if len(combined) >= 12:
+        results["Yield Curve (10Y-2Y)"] = round(
+            combined.iloc[:, 0].corr(combined.iloc[:, 1]), 3
+        )
+
+    corr_df = pd.DataFrame.from_dict(
+        results, orient="index", columns=["Correlation"]
+    ).sort_values("Correlation")
+
+    # Friendly display names
+    name_map = {
+        "CPI Inflation (Trimmed Mean)": "Inflation",
+        "Federal Funds Rate": "Fed Rate",
+        "VIX": "VIX (Fear Index)",
+        "High Yield Spread": "Credit Spread",
+        "Consumer Sentiment": "Consumer Sentiment",
+        "Unemployment Rate": "Unemployment",
+        "Yield Curve (10Y-2Y)": "Yield Curve",
     }
-    start = datetime.now() - lookbacks.get(period, lookbacks["1Y"])
-    mask = prices.index >= pd.Timestamp(start)
-    sliced = prices.loc[mask].dropna(how="all")
-    daily_returns = sliced.pct_change().dropna()
+    corr_df.index = [name_map.get(i, i) for i in corr_df.index]
+    return corr_df
 
-    trading_days = len(daily_returns)
-    if trading_days == 0:
-        return pd.DataFrame()
 
-    ann_return = ((sliced.iloc[-1] / sliced.iloc[0]) ** (252 / trading_days) - 1) * 100
-    ann_vol = daily_returns.std() * (252 ** 0.5) * 100
-    sharpe = ann_return / ann_vol
+def compute_recession_score(df: pd.DataFrame) -> dict:
+    """
+    Composite recession risk score (0-100) from 5 signals.
+    Higher = more recession risk.
+    """
+    score = 0
+    signals = {}
 
-    result = pd.DataFrame({
-        "Return (%)": ann_return,
-        "Volatility (%)": ann_vol,
-        "Sharpe Ratio": sharpe,
-    })
-    return result.dropna()
+    # 1. Yield curve inverted?
+    spread = compute_yield_spread(df).dropna()
+    spread_val = spread.iloc[-1]
+    if spread_val < 0:
+        score += 25
+        signals["Yield Curve"] = ("Inverted — strong recession signal", "danger")
+    elif spread_val < 0.5:
+        score += 10
+        signals["Yield Curve"] = ("Flattening — watch closely", "warning")
+    else:
+        signals["Yield Curve"] = ("Normal — no immediate concern", "success")
+
+    # 2. Unemployment rising?
+    unemp = df["Unemployment Rate"].dropna()
+    unemp_3m_change = unemp.iloc[-1] - unemp.iloc[-4] if len(unemp) >= 4 else 0
+    if unemp_3m_change > 0.5:
+        score += 25
+        signals["Unemployment Trend"] = ("Rising sharply — labor market weakening", "danger")
+    elif unemp_3m_change > 0.1:
+        score += 10
+        signals["Unemployment Trend"] = ("Ticking up — early warning sign", "warning")
+    else:
+        signals["Unemployment Trend"] = ("Stable or falling — labor market healthy", "success")
+
+    # 3. Credit spreads wide?
+    hy = df["High Yield Spread"].dropna().iloc[-1]
+    if hy > 6:
+        score += 25
+        signals["Credit Spreads"] = (f"Wide at {hy:.2f}% — markets pricing in stress", "danger")
+    elif hy > 4:
+        score += 10
+        signals["Credit Spreads"] = (f"Elevated at {hy:.2f}% — some caution warranted", "warning")
+    else:
+        signals["Credit Spreads"] = (f"Tight at {hy:.2f}% — risk appetite healthy", "success")
+
+    # 4. Consumer sentiment falling?
+    sentiment = df["Consumer Sentiment"].dropna()
+    sent_val = sentiment.iloc[-1]
+    sent_6m_change = sent_val - sentiment.iloc[-7] if len(sentiment) >= 7 else 0
+    if sent_6m_change < -10:
+        score += 15
+        signals["Consumer Sentiment"] = (f"Falling sharply ({sent_val:.0f}) — households worried", "danger")
+    elif sent_6m_change < -4:
+        score += 7
+        signals["Consumer Sentiment"] = (f"Softening ({sent_val:.0f}) — mild concern", "warning")
+    else:
+        signals["Consumer Sentiment"] = (f"Stable ({sent_val:.0f}) — consumers confident", "success")
+
+    # 5. VIX elevated?
+    vix = df["VIX"].dropna().iloc[-1]
+    if vix > 30:
+        score += 10
+        signals["Market Fear (VIX)"] = (f"Elevated at {vix:.1f} — panic in markets", "danger")
+    elif vix > 20:
+        score += 5
+        signals["Market Fear (VIX)"] = (f"Cautious at {vix:.1f} — some anxiety", "warning")
+    else:
+        signals["Market Fear (VIX)"] = (f"Calm at {vix:.1f} — low fear", "success")
+
+    return {"score": min(score, 100), "signals": signals}
