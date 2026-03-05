@@ -135,6 +135,65 @@ def compute_macro_correlations(df: pd.DataFrame, prices: pd.DataFrame) -> pd.Dat
     return corr_df
 
 
+def get_market_news(top_sector: str = None, bottom_sector: str = None,
+                    vix_elevated: bool = False, max_articles: int = 10) -> list:
+    """
+    Fetch contextually relevant market news based on current conditions.
+    Prioritizes: leading sector, lagging sector, broad market, Fed/macro if stressed.
+    Each article is tagged with why it's relevant.
+    """
+    # Build a priority queue of (ticker, label) pairs
+    targets = [("SPY", "Broad Market")]
+    if top_sector:
+        targets.insert(0, (top_sector, f"Leading Sector — why {top_sector} is up"))
+    if bottom_sector:
+        targets.insert(1, (bottom_sector, f"Lagging Sector — why {bottom_sector} is down"))
+    if vix_elevated:
+        targets.append(("^VIX", "Market Volatility"))
+    # Always include Fed/rates context
+    targets.append(("TLT", "Bond Market / Fed Policy"))
+
+    seen = set()
+    articles = []
+    now = datetime.utcnow()
+
+    for ticker, label in targets:
+        try:
+            raw = yf.Ticker(ticker).news or []
+        except Exception:
+            continue
+        for item in raw:
+            content = item.get("content", {})
+            title = content.get("title", "").strip()
+            url = (content.get("canonicalUrl") or {}).get("url", "")
+            source = (content.get("provider") or {}).get("displayName", "Yahoo Finance")
+            pub_str = content.get("pubDate", "")
+            if not title or not url or title in seen:
+                continue
+            seen.add(title)
+            try:
+                pub_dt = datetime.strptime(pub_str, "%Y-%m-%dT%H:%M:%SZ")
+                delta = now - pub_dt
+                hours = int(delta.total_seconds() // 3600)
+                age = f"{hours}h ago" if hours < 24 else f"{delta.days}d ago"
+                # Skip articles older than 3 days
+                if delta.days > 3:
+                    continue
+            except Exception:
+                age = ""
+            articles.append({
+                "title": title,
+                "url": url,
+                "source": source,
+                "age": age,
+                "label": label,
+            })
+            if len(articles) >= max_articles:
+                return articles
+
+    return articles
+
+
 def compute_recession_score(df: pd.DataFrame) -> dict:
     """
     Composite recession risk score (0-100) from 5 signals.

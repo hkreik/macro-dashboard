@@ -7,6 +7,7 @@ from data import (
     get_all_fred_data, get_sector_data,
     compute_yield_spread, compute_sector_returns,
     compute_macro_correlations, compute_recession_score,
+    get_market_news,
 )
 from charts import (
     sp500_sma_chart, stress_chart, fed_policy_chart,
@@ -517,6 +518,56 @@ def build_synthesis(df, spread, prices, returns):
 
 # ── Layout ─────────────────────────────────────────────────────────────────────
 
+LABEL_COLORS = {
+    "Broad Market": "#636EFA",
+    "Bond Market / Fed Policy": "#00CC96",
+    "Market Volatility": "#EF553B",
+}
+
+
+def build_news_card(articles: list) -> dbc.Card:
+    if not articles:
+        rows = [html.P("No news available.", className="text-muted mb-0")]
+    else:
+        rows = []
+        for a in articles:
+            label = a.get("label", "")
+            # Color: sector labels gold, others by map
+            label_color = LABEL_COLORS.get(label, "#FECB52")
+            rows.append(
+                html.Div([
+                    html.Div(
+                        html.Span(label, style={
+                            "fontSize": "0.68rem", "color": label_color,
+                            "textTransform": "uppercase", "letterSpacing": "0.04em",
+                            "fontWeight": "600",
+                        }),
+                        className="mb-1",
+                    ),
+                    html.A(
+                        a["title"],
+                        href=a["url"],
+                        target="_blank",
+                        style={"fontSize": "0.85rem", "color": "#e9ecef",
+                               "textDecoration": "none", "lineHeight": "1.4"},
+                    ),
+                    html.Div(
+                        f"{a['source']}  ·  {a['age']}",
+                        className="text-muted mt-1",
+                        style={"fontSize": "0.72rem"},
+                    ),
+                ], className="mb-3 pb-2 border-bottom border-secondary")
+            )
+    return dbc.Card(dbc.CardBody([
+        html.H6("News Driving the Market", className="mb-3",
+                style={"fontSize": "0.8rem", "textTransform": "uppercase",
+                       "letterSpacing": "0.05em", "color": "#adb5bd"}),
+        *rows,
+        html.P("Via Yahoo Finance · Last 3 days", className="text-muted mb-0 mt-1",
+               style={"fontSize": "0.7rem"}),
+    ]), className="bg-dark border-secondary mb-4")
+
+
 def section_header(title, subtitle):
     return [
         html.Hr(),
@@ -545,7 +596,10 @@ app.layout = dbc.Container([
     html.Div(id="kpi-row"),
 
     # ── Market Briefing (the story) ───────────────────────────────────────────
-    html.Div(id="market-briefing"),
+    dbc.Row([
+        dbc.Col(html.Div(id="market-briefing"), md=8),
+        dbc.Col(html.Div(id="news-card"), md=4),
+    ]),
 
     # ── Recession Score ────────────────────────────────────────────────────────
     *section_header(
@@ -632,6 +686,7 @@ app.layout = dbc.Container([
         Output("fed-conclusion", "children"),
         Output("correlation-chart", "figure"),
         Output("correlation-conclusion", "children"),
+        Output("news-card", "children"),
     ],
     [Input("sp500-sma", "id")],
 )
@@ -643,6 +698,11 @@ def update_main(_):
     spy_return = ytd_returns.get("SPY", 0.0)
     corr_df = compute_macro_correlations(df, prices)
     recession = compute_recession_score(df)
+    top_sector = ytd_returns.index[0] if len(ytd_returns) > 0 else None
+    bottom_sector = ytd_returns.index[-1] if len(ytd_returns) > 0 else None
+    vix_elevated = df["VIX"].dropna().iloc[-1] > 20
+    news = get_market_news(top_sector=top_sector, bottom_sector=bottom_sector,
+                           vix_elevated=vix_elevated)
 
     return (
         build_kpi_row(df, spread, spy_return),
@@ -656,6 +716,7 @@ def update_main(_):
         fed_conclusion(df),
         correlation_chart(corr_df),
         correlation_conclusion(corr_df),
+        build_news_card(news),
     )
 
 
