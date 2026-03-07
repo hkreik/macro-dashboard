@@ -1,1 +1,353 @@
-IiIiCmFwcC5weSDigJQgQmVnaW5uZXIgbGVhcm5pbmcgZGFzaGJvYXJkIGVudHJ5IHBvaW50LgoKTGF5b3V0IG9yZGVyICh0b3AgdG8gYm90dG9tKToKICAxLiBIZWFkZXIKICAyLiAiV2hhdCBpcyB0aGlzIGRhc2hib2FyZD8iIGludHJvCiAgMy4gS2V5IGluZGljYXRvcnMgKEtQSSBjYXJkcykKICA0LiBSZWNlc3Npb24gcmlzawogIDUuIFdoYXQncyBoYXBwZW5pbmcgcmlnaHQgbm93IChicmllZmluZykKICA2LiBDaGFydHM6IFMmUCA1MDAsIEZlYXIgaW5kZXgsIEZlZCB2cyBJbmZsYXRpb24sIFlpZWxkIEN1cnZlCiAgNy4gU2VjdG9yIHBlcmZvcm1hbmNlIChkcm9wZG93biB0byBjaGFuZ2UgcGVyaW9kKQogIDguIE5ld3MKICA5LiBGb290ZXIKIiIiCgppbXBvcnQgZGFzaApmcm9tIGRhc2ggaW1wb3J0IGRjYywgaHRtbCwgSW5wdXQsIE91dHB1dCwgU3RhdGUKaW1wb3J0IGRhc2hfYm9vdHN0cmFwX2NvbXBvbmVudHMgYXMgZGJjCmZyb20gZmxhc2tfY2FjaGluZyBpbXBvcnQgQ2FjaGUKCmZyb20gZGF0YSBpbXBvcnQgKAogICAgZ2V0X2FsbF9mcmVkX2RhdGEsIGdldF9zZWN0b3JfZGF0YSwKICAgIGNvbXB1dGVfeWllbGRfc3ByZWFkLCBjb21wdXRlX3NlY3Rvcl9yZXR1cm5zLAogICAgY29tcHV0ZV9yZWNlc3Npb25fc2NvcmUsIGdldF9tYXJrZXRfbmV3cywKKQpmcm9tIGNoYXJ0cyBpbXBvcnQgKAogICAgc3A1MDBfc21hX2NoYXJ0LCBmZWRfcG9saWN5X2NoYXJ0LCBzdHJlc3NfY2hhcnQsCiAgICB5aWVsZF9jdXJ2ZV9jaGFydCwgc2VjdG9yX2Jhcl9jaGFydCwKKQpmcm9tIGxheW91dHMgaW1wb3J0ICgKICAgIGJ1aWxkX2hlYWRlciwgYnVpbGRfZm9vdGVyLCBzZWN0aW9uX2hlYWRlciwKICAgIGJ1aWxkX2twaV9yb3csIGJ1aWxkX3JlY2Vzc2lvbl9wYW5lbCwKICAgIGJ1aWxkX21hcmtldF9icmllZmluZywgYnVpbGRfbmV3c19wYW5lbCwKICAgIEMsIFNFQ1RPUl9OQU1FUywKKQoKIyDilIDilIAgQ3VzdG9tIENTUyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKQ1NTID0gIiIiCkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PUludGVyOndnaHRANDAwOzUwMDs2MDA7NzAwOzgwMCZkaXNwbGF5PXN3YXAnKTsKCiosICo6OmJlZm9yZSwgKjo6YWZ0ZXIgeyBib3gtc2l6aW5nOiBib3JkZXItYm94OyB9Cgpib2R5IHsKICAgIGJhY2tncm91bmQtY29sb3I6ICMxMTE4MjcgIWltcG9ydGFudDsKICAgIGZvbnQtZmFtaWx5OiBJbnRlciwgc3lzdGVtLXVpLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7CiAgICBjb2xvcjogI0Y5RkFGQiAhaW1wb3J0YW50OwogICAgbWFyZ2luOiAwOwp9Cgo6Oi13ZWJraXQtc2Nyb2xsYmFyIHsgd2lkdGg6IDZweDsgfQo6Oi13ZWJraXQtc2Nyb2xsYmFyLXRyYWNrIHsgYmFja2dyb3VuZDogIzExMTgyNzsgfQo6Oi13ZWJraXQtc2Nyb2xsYmFyLXRodW1iIHsgYmFja2dyb3VuZDogIzM3NDE1MTsgYm9yZGVyLXJhZGl1czogM3B4OyB9CgouY2FyZCwgLmNhcmQtYm9keSB7IGJhY2tncm91bmQ6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7IGJvcmRlcjogbm9uZSAhaW1wb3J0YW50OyBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7IH0KCi8qIEFjY29yZGlvbiBzdHlsaW5nICovCi5hY2NvcmRpb24tYnV0dG9uIHsgZm9udC1zaXplOiAxMnB4ICFpbXBvcnRhbnQ7IHBhZGRpbmc6IDZweCAwICFpbXBvcnRhbnQ7IH0KLmFjY29yZGlvbi1idXR0b246bm90KC5jb2xsYXBzZWQpIHsgYm94LXNoYWRvdzogbm9uZSAhaW1wb3J0YW50OyB9Ci5hY2NvcmRpb24tYm9keSB7IHBhZGRpbmc6IDhweCAwICFpbXBvcnRhbnQ7IH0KCi8qIE5ld3MgaG92ZXIgKi8KYSB7IGNvbG9yOiAjNjBBNUZBICFpbXBvcnRhbnQ7IH0KYTpob3ZlciB7IGNvbG9yOiAjOTNDNUZEICFpbXBvcnRhbnQ7IH0KCi5pbnRyby1ib3ggewogICAgYmFja2dyb3VuZDogIzFGMjkzNzsKICAgIGJvcmRlcjogMXB4IHNvbGlkICMzNzQxNTE7CiAgICBib3JkZXItbGVmdDogNHB4IHNvbGlkICM2MEE1RkE7CiAgICBib3JkZXItcmFkaXVzOiA4cHg7CiAgICBwYWRkaW5nOiAxOHB4IDIycHg7CiAgICBtYXJnaW4tYm90dG9tOiAyOHB4Owp9Cgouc2VjdGlvbi1zcGFjZXIgeyBoZWlnaHQ6IDI4cHg7IH0KIiIiCgojIOKUgOKUgCBBcHAgaW5pdCDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKYXBwID0gZGFzaC5EYXNoKAogICAgX19uYW1lX18sCiAgICBleHRlcm5hbF9zdHlsZXNoZWV0cz1bZGJjLnRoZW1lcy5EQVJLTFldLAogICAgbWV0YV90YWdzPVt7J25hbWUnOiAndmlld3BvcnQnLCAnY29udGVudCc6ICd3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSd9XSwKICAgIHN1cHByZXNzX2NhbGxiYWNrX2V4Y2VwdGlvbnM9VHJ1ZSwKKQphcHAudGl0bGUgPSAnU3RvY2sgTWFya2V0IExlYXJuaW5nIERhc2hib2FyZCcKc2VydmVyID0gYXBwLnNlcnZlcgoKYXBwLmluZGV4X3N0cmluZyA9IGYnJyc8IURPQ1RZUEUgaHRtbD4KPGh0bWw+CjxoZWFkPgogICAge3slbWV0YXMlfX0KICAgIDx0aXRsZT57eyV0aXRsZSV9fTwvdGl0bGU+CiAgICB7eyVmYXZpY29uJX19CiAgICB7eyVjc3MlfX0KICAgIDxzdHlsZT57Q1NTfTwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CiAgICB7eyVhcHBfZW50cnklfX0KICAgIDxmb290ZXI+e3slY29uZmlnJX19e3slc2NyaXB0cyV9fXt7JXJlbmRlcmVyJX19PC9mb290ZXI+CjwvYm9keT4KPC9odG1sPicnJwoKIyDilIDilIAgQ2FjaGUg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACmNhY2hlID0gQ2FjaGUoc2VydmVyLCBjb25maWc9ewogICAgJ0NBQ0hFX1RZUEUnOiAnRmlsZVN5c3RlbUNhY2hlJywKICAgICdDQUNIRV9ESVInOiAnY2FjaGUtZGlyZWN0b3J5JywKICAgICdDQUNIRV9ERUZBVUxUX1RJTUVPVVQnOiAzNjAwLAp9KQoKCkBjYWNoZS5tZW1vaXplKHRpbWVvdXQ9MzYwMCkKZGVmIGxvYWRfZnJlZCgpOgogICAgcmV0dXJuIGdldF9hbGxfZnJlZF9kYXRhKCkKCgpAY2FjaGUubWVtb2l6ZSh0aW1lb3V0PTM2MDApCmRlZiBsb2FkX3NlY3RvcnMoKToKICAgIHJldHVybiBnZXRfc2VjdG9yX2RhdGEoKQoKCiMg4pSA4pSAIFBlcmlvZCBvcHRpb25zIGZvciBzZWN0b3IgY2hhcnQg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAClBFUklPRFMgPSBbJ1lURCcsICcxTScsICczTScsICc2TScsICcxWSddCgojIOKUgOKUgCBMYXlvdXQg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACmFwcC5sYXlvdXQgPSBodG1sLkRpdihbCiAgICBidWlsZF9oZWFkZXIoKSwKCiAgICBkYmMuQ29udGFpbmVyKFsKCiAgICAgICAgIyBJbnRybyBleHBsYWluZXIKICAgICAgICBodG1sLkRpdihzdHlsZT17J2hlaWdodCc6ICcyNHB4J30pLAogICAgICAgIGh0bWwuRGl2KFsKICAgICAgICAgICAgaHRtbC5INSgnSG93IHRvIHVzZSB0aGlzIGRhc2hib2FyZCcsIHN0eWxlPXsKICAgICAgICAgICAgICAgICdjb2xvcic6ICcjRjlGQUZCJywgJ2ZvbnRXZWlnaHQnOiAnNzAwJywgJ21hcmdpbkJvdHRvbSc6ICcxMHB4JywKICAgICAgICAgICAgfSksCiAgICAgICAgICAgIGh0bWwuUChbCiAgICAgICAgICAgICAgICAnVGhpcyBkYXNoYm9hcmQgc2hvd3MgeW91IHRoZSByZWFsIGVjb25vbWljIGZvcmNlcyB0aGF0IG1vdmUgc3RvY2sgcHJpY2VzIOKAlCB1cGRhdGVkIGhvdXJseS4gJywKICAgICAgICAgICAgICAgICdFdmVyeSBudW1iZXIgaGFzIGEgcGxhaW4tRW5nbGlzaCBleHBsYW5hdGlvbiBiZWxvdyBpdC4gJywKICAgICAgICAgICAgICAgICdDbGljayB0aGUgJywKICAgICAgICAgICAgICAgIGh0bWwuU3Ryb25nKCciV2hhdCBkb2VzIHRoaXMgbWVhbj8iJyksCiAgICAgICAgICAgICAgICAnIGJ1dHRvbnMgdW5kZXIgZWFjaCBzZWN0aW9uIHRvIGxlYXJuIHdoeSBlYWNoIG1ldHJpYyBtYXR0ZXJzLicsCiAgICAgICAgICAgIF0sIHN0eWxlPXsnY29sb3InOiAnIzlDQTNBRicsICdmb250U2l6ZSc6ICcxM3B4JywgJ2xpbmVIZWlnaHQnOiAnMS44JywgJ21hcmdpbic6ICcwJ30pLAogICAgICAgIF0sIGNsYXNzTmFtZT0naW50cm8tYm94JyksCgogICAgICAgICMg4pSA4pSAIEtleSBJbmRpY2F0b3JzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgICAgIHNlY3Rpb25faGVhZGVyKAogICAgICAgICAgICAn8J+TiiAgS2V5IE1hcmtldCBJbmRpY2F0b3JzJywKICAgICAgICAgICAgZXhwbGFpbmVyPSgKICAgICAgICAgICAgICAgICdUaGVzZSBhcmUgdGhlIG1vc3QgaW1wb3J0YW50IG51bWJlcnMgd2F0Y2hlZCBieSBwcm9mZXNzaW9uYWwgaW52ZXN0b3JzIGV2ZXJ5IGRheS4gJwogICAgICAgICAgICAgICAgJ1RvZ2V0aGVyIHRoZXkgdGVsbCB5b3U6IElzIHRoZSBlY29ub215IGdyb3dpbmcgb3Igc2hyaW5raW5nPyBBcmUgaW52ZXN0b3JzIG5lcnZvdXMgb3IgY2FsbT8gJwogICAgICAgICAgICAgICAgJ0lzIGJvcnJvd2luZyBjaGVhcCBvciBleHBlbnNpdmU/IEVhY2ggY2FyZCBzaG93cyB0aGUgY3VycmVudCBudW1iZXIgQU5EIHdoYXQgaXQgbWVhbnMgcmlnaHQgbm93LicKICAgICAgICAgICAgKQogICAgICAgICksCiAgICAgICAgaHRtbC5EaXYoaWQ9J2twaS1yb3cnKSwKCiAgICAgICAgaHRtbC5EaXYoc3R5bGU9eydoZWlnaHQnOiAnMzJweCd9KSwKCiAgICAgICAgIyDilIDilIAgUmVjZXNzaW9uIFJpc2sg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgc2VjdGlvbl9oZWFkZXIoCiAgICAgICAgICAgICfwn5qmICBSZWNlc3Npb24gUmlzayBTY29yZScsCiAgICAgICAgICAgIGV4cGxhaW5lcj0oCiAgICAgICAgICAgICAgICAnQSByZWNlc3Npb24gaXMgd2hlbiB0aGUgZWNvbm9teSBzaHJpbmtzIGZvciB0d28gb3IgbW9yZSBxdWFydGVycyBpbiBhIHJvdyDigJQgYnVzaW5lc3NlcyBlYXJuIGxlc3MsICcKICAgICAgICAgICAgICAgICd1bmVtcGxveW1lbnQgcmlzZXMsIGFuZCBzdG9jayBwcmljZXMgdXN1YWxseSBmYWxsIHNpZ25pZmljYW50bHkuICcKICAgICAgICAgICAgICAgICdUaGlzIHNjb3JlIHRyYWNrcyA2IHdhcm5pbmcgc2lnbmFscyB0aGF0IGVjb25vbWlzdHMgd2F0Y2guICcKICAgICAgICAgICAgICAgICdJdCBpcyBOT1QgYSBndWFyYW50ZWUg4oCUIGl0IGlzIGEgcHJvYmFiaWxpdHkgZXN0aW1hdGUgYmFzZWQgb24gaGlzdG9yaWNhbCBwYXR0ZXJucy4gJwogICAgICAgICAgICAgICAgJ1RoZSB5aWVsZCBjdXJ2ZSBpbnZlcnNpb24gc2lnbmFsIGFsb25lIGhhcyBwcmVjZWRlZCBldmVyeSBVUyByZWNlc3Npb24gc2luY2UgMTk2MC4nCiAgICAgICAgICAgICkKICAgICAgICApLAogICAgICAgIGh0bWwuRGl2KGlkPSdyZWNlc3Npb24tcGFuZWwnKSwKCiAgICAgICAgaHRtbC5EaXYoc3R5bGU9eydoZWlnaHQnOiAnMzJweCd9KSwKCiAgICAgICAgIyDilIDilIAgV2hhdCdzIGhhcHBlbmluZyBub3cg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgc2VjdGlvbl9oZWFkZXIoCiAgICAgICAgICAgICfwn5OwICBXaGF0XCdzIEhhcHBlbmluZyBSaWdodCBOb3cnLAogICAgICAgICAgICBleHBsYWluZXI9KAogICAgICAgICAgICAgICAgJ1RoaXMgc2VjdGlvbiB0cmFuc2xhdGVzIHRoZSByYXcgbnVtYmVycyBpbnRvIHBsYWluLUVuZ2xpc2ggc3Rvcmllcy4gJwogICAgICAgICAgICAgICAgJ1RoaW5rIG9mIGl0IGFzIGEgcXVpY2sgYnJpZWYgb24gdGhlIG1haW4gZm9yY2VzIHNoYXBpbmcgdGhlIG1hcmtldCB0b2RheS4nCiAgICAgICAgICAgICkKICAgICAgICApLAogICAgICAgIGh0bWwuRGl2KGlkPSdicmllZmluZy1wYW5lbCcpLAoKICAgICAgICBodG1sLkRpdihzdHlsZT17J2hlaWdodCc6ICczMnB4J30pLAoKICAgICAgICAjIOKUgOKUgCBTJlAgNTAwIGNoYXJ0IOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgICAgIHNlY3Rpb25faGVhZGVyKAogICAgICAgICAgICAn8J+TiCAgSXMgdGhlIFN0b2NrIE1hcmtldCBUcmVuZGluZyBVcCBvciBEb3duPycsCiAgICAgICAgICAgIGV4cGxhaW5lcj0oCiAgICAgICAgICAgICAgICAnVGhlIFMmUCA1MDAgKHRyYWNrZWQgYnkgdGhlIFNQWSBFVEYpIGNvbnRhaW5zIDUwMCBvZiB0aGUgbGFyZ2VzdCBVUyBjb21wYW5pZXMuICcKICAgICAgICAgICAgICAgICdXaGVuIHlvdSBoZWFyICJ0aGUgbWFya2V0IGlzIHVwIHRvZGF5LCIgdGhpcyBpcyB3aGF0IHRoZXlcJ3JlIHRhbGtpbmcgYWJvdXQuICcKICAgICAgICAgICAgICAgICdUaGUgZG90dGVkIHllbGxvdyBsaW5lIGlzIHRoZSAyMDAtZGF5IG1vdmluZyBhdmVyYWdlIOKAlCB0aGUgbG9uZy10ZXJtIHRyZW5kLiAnCiAgICAgICAgICAgICAgICAnV2hlbiB0aGUgcHJpY2UgaXMgYWJvdmUgdGhlIHllbGxvdyBsaW5lLCB0aGUgbWFya2V0IGlzIGluIGEgbG9uZy10ZXJtIHVwdHJlbmQgKGJ1bGxpc2gpLiAnCiAgICAgICAgICAgICAgICAnV2hlbiBpdCBmYWxscyBiZWxvdywgaXQgbWF5IHNpZ25hbCBhIGxvbmdlci10ZXJtIGRvd250dXJuIChiZWFyaXNoKS4nCiAgICAgICAgICAgICkKICAgICAgICApLAogICAgICAgIGRjYy5HcmFwaChpZD0nY2hhcnQtc3B5JywgY29uZmlnPXsnZGlzcGxheU1vZGVCYXInOiBGYWxzZX0pLAoKICAgICAgICBodG1sLkRpdihzdHlsZT17J2hlaWdodCc6ICczMnB4J30pLAoKICAgICAgICAjIOKUgOKUgCBGZWFyIGluZGV4IOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgICAgIHNlY3Rpb25faGVhZGVyKAogICAgICAgICAgICAn8J+YsCAgSG93IFNjYXJlZCBBcmUgSW52ZXN0b3JzPyAoVklYIEZlYXIgSW5kZXgpJywKICAgICAgICAgICAgZXhwbGFpbmVyPSgKICAgICAgICAgICAgICAgICdUaGUgVklYIG1lYXN1cmVzIGhvdyBtdWNoIGludmVzdG9ycyBleHBlY3QgcHJpY2VzIHRvIHN3aW5nIGluIHRoZSBuZXh0IDMwIGRheXMuICcKICAgICAgICAgICAgICAgICdJdFwncyBjYWxjdWxhdGVkIGZyb20gb3B0aW9ucyBwcmljZXMg4oCUIHdoZW4gaW52ZXN0b3JzIHBheSBhIGxvdCB0byBwcm90ZWN0IGFnYWluc3QgbG9zc2VzLCBWSVggcmlzZXMuICcKICAgICAgICAgICAgICAgICdCZWxvdyAxNSA9IGNhbG0gYW5kIGNvbXBsYWNlbnQuICcKICAgICAgICAgICAgICAgICcxNS0yNSA9IG5vcm1hbCB1bmNlcnRhaW50eS4gJwogICAgICAgICAgICAgICAgJzI1LTM1ID0gZWxldmF0ZWQgd29ycnkuICcKICAgICAgICAgICAgICAgICdBYm92ZSAzNSA9IHBhbmljIChoYXBwZW5lZCBkdXJpbmcgQ09WSUQgY3Jhc2gsIDIwMDggY3Jpc2lzLCBldGMuKS4gJwogICAgICAgICAgICAgICAgJ0ludGVyZXN0aW5nbHksIGhpZ2ggVklYIG9mdGVuIG1hcmtzIGEgbWFya2V0IEJPVFRPTSDigJQgZXh0cmVtZSBmZWFyIGNhbiBiZSBhIGJ1eWluZyBvcHBvcnR1bml0eSBmb3IgbG9uZy10ZXJtIGludmVzdG9ycy4nCiAgICAgICAgICAgICkKICAgICAgICApLAogICAgICAgIGRjYy5HcmFwaChpZD0nY2hhcnQtdml4JywgY29uZmlnPXsnZGlzcGxheU1vZGVCYXInOiBGYWxzZX0pLAoKICAgICAgICBodG1sLkRpdihzdHlsZT17J2hlaWdodCc6ICczMnB4J30pLAoKICAgICAgICAjIOKUgOKUgCBGZWQgJiBJbmZsYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgc2VjdGlvbl9oZWFkZXIoCiAgICAgICAgICAgICfwn4+mICBUaGUgRmVkIHZzIEluZmxhdGlvbiDigJQgVGhlIE1vc3QgSW1wb3J0YW50IEJhdHRsZSBpbiBNYXJrZXRzJywKICAgICAgICAgICAgZXhwbGFpbmVyPSgKICAgICAgICAgICAgICAgICdUaGUgRmVkZXJhbCBSZXNlcnZlICh0aGUgRmVkKSBjb250cm9scyBpbnRlcmVzdCByYXRlcyB0byBrZWVwIGluZmxhdGlvbiBhcm91bmQgMiUuICcKICAgICAgICAgICAgICAgICdXaGVuIGluZmxhdGlvbiBnZXRzIHRvbyBoaWdoLCB0aGUgRmVkIHJhaXNlcyByYXRlcyB0byBtYWtlIGJvcnJvd2luZyBleHBlbnNpdmUg4oCUICcKICAgICAgICAgICAgICAgICd0aGlzIHNsb3dzIHNwZW5kaW5nIGFuZCBoaXJpbmcsIHdoaWNoIGJyaW5ncyBwcmljZXMgZG93bi4gQnV0IGhpZ2hlciByYXRlcyBhbHNvICcKICAgICAgICAgICAgICAgICdtYWtlIHN0b2NrcyBsZXNzIGF0dHJhY3RpdmUgKGJvbmRzIHBheSBtb3JlKSBhbmQgc2xvdyBlY29ub21pYyBncm93dGguICcKICAgICAgICAgICAgICAgICdUaGlzIGlzIHdoeSBpbnZlc3RvcnMgd2F0Y2ggZXZlcnkgRmVkIG1lZXRpbmcgc28gY2xvc2VseS4gJwogICAgICAgICAgICAgICAgJ1RoZSByZWQgbGluZSA9IEZlZFwncyByYXRlLiBUaGUgeWVsbG93IGxpbmUgPSBhY3R1YWwgaW5mbGF0aW9uLiAnCiAgICAgICAgICAgICAgICAnV2hlbiB0aGUgcmVkIGlzIGFib3ZlIHRoZSB5ZWxsb3csICJyZWFsIiByYXRlcyBhcmUgcG9zaXRpdmUgKHJlc3RyaWN0aXZlKS4gJwogICAgICAgICAgICAgICAgJ1RoZSBncmVlbiBkb3R0ZWQgbGluZSA9IHRoZSBGZWRcJ3MgMiUgdGFyZ2V0LicKICAgICAgICAgICAgKQogICAgICAgICksCiAgICAgICAgZGNjLkdyYXBoKGlkPSdjaGFydC1mZWQnLCBjb25maWc9eydkaXNwbGF5TW9kZUJhcic6IEZhbHNlfSksCgogICAgICAgIGh0bWwuRGl2KHN0eWxlPXsnaGVpZ2h0JzogJzMycHgnfSksCgogICAgICAgICMg4pSA4pSAIFlpZWxkIEN1cnZlIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgICAgIHNlY3Rpb25faGVhZGVyKAogICAgICAgICAgICAn8J+TiSAgVGhlIFlpZWxkIEN1cnZlIOKAlCBXaHkgQm9uZHMgUHJlZGljdCBSZWNlc3Npb25zJywKICAgICAgICAgICAgZXhwbGFpbmVyPSgKICAgICAgICAgICAgICAgICdCb25kcyBhcmUgbG9hbnMgeW91IGdpdmUgdG8gdGhlIGdvdmVybm1lbnQuIEluIHJldHVybiwgdGhlIGdvdmVybm1lbnQgcGF5cyB5b3UgaW50ZXJlc3QuICcKICAgICAgICAgICAgICAgICdOb3JtYWxseSwgbG9hbnMgdGhhdCBsYXN0IGxvbmdlciAoMTAgeWVhcnMpIHBheSBtb3JlIGludGVyZXN0IHRoYW4gc2hvcnQtdGVybSBsb2FucyAoMiB5ZWFycykg4oCUICcKICAgICAgICAgICAgICAgICdiZWNhdXNlIHlvdVwncmUgdHlpbmcgdXAgbW9uZXkgZm9yIGxvbmdlci4gJwogICAgICAgICAgICAgICAgJ0J1dCBzb21ldGltZXMgc2hvcnQtdGVybSByYXRlcyBnbyBISUdIRVIgdGhhbiBsb25nLXRlcm0gcmF0ZXMuIFRoaXMgaXMgY2FsbGVkIGFuICJpbnZlcnNpb24uIiAnCiAgICAgICAgICAgICAgICAnV2h5IGRvZXMgaXQgbWF0dGVyPyBCZWNhdXNlIGl0IG1lYW5zIGludmVzdG9ycyBhcmUgc28gd29ycmllZCBhYm91dCB0aGUgbmVhci10ZXJtIGVjb25vbXkgJwogICAgICAgICAgICAgICAgJ3RoYXQgdGhleVwncmUgZmxlZWluZyB0byBsb25nLXRlcm0gYm9uZHMsIGRyaXZpbmcgdGhvc2UgcmF0ZXMgZG93bi4gJwogICAgICAgICAgICAgICAgJ0FuIGludmVydGVkIHlpZWxkIGN1cnZlIGhhcyBwcmVjZWRlZCBldmVyeSBVUyByZWNlc3Npb24gaW4gdGhlIGxhc3QgNjAgeWVhcnMuICcKICAgICAgICAgICAgICAgICdSZWQgc2hhZGluZyBiZWxvdyB6ZXJvID0gaW52ZXJ0ZWQgKHdhcm5pbmcpLiBHcmVlbiBhYm92ZSB6ZXJvID0gaGVhbHRoeS4nCiAgICAgICAgICAgICkKICAgICAgICApLAogICAgICAgIGRjYy5HcmFwaChpZD0nY2hhcnQteWllbGQnLCBjb25maWc9eydkaXNwbGF5TW9kZUJhcic6IEZhbHNlfSksCgogICAgICAgIGh0bWwuRGl2KHN0eWxlPXsnaGVpZ2h0JzogJzMycHgnfSksCgogICAgICAgICMg4pSA4pSAIFNlY3RvcnMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgc2VjdGlvbl9oZWFkZXIoCiAgICAgICAgICAgICfwn4+tICBTZWN0b3IgUGVyZm9ybWFuY2Ug4oCUIFdoaWNoIFBhcnRzIG9mIHRoZSBFY29ub215IEFyZSBXaW5uaW5nPycsCiAgICAgICAgICAgIGV4cGxhaW5lcj0oCiAgICAgICAgICAgICAgICAnVGhlIHN0b2NrIG1hcmtldCBpc25cJ3Qgb25lIHRoaW5nIOKAlCBpdFwncyBtYWRlIHVwIG9mIGRpZmZlcmVudCBzZWN0b3JzIChpbmR1c3RyaWVzKS4gJwogICAgICAgICAgICAgICAgJ1RlY2hub2xvZ3ksIEhlYWx0aGNhcmUsIEVuZXJneSwgQmFua3Mg4oCUIGVhY2ggc2VjdG9yIHJlc3BvbmRzIGRpZmZlcmVudGx5IHRvIHRoZSBlY29ub215LiAnCiAgICAgICAgICAgICAgICAnRm9yIGV4YW1wbGU6IHdoZW4gaW50ZXJlc3QgcmF0ZXMgcmlzZSwgYmFua3MgZG8gYmV0dGVyICh0aGV5IGVhcm4gbW9yZSBvbiBsb2FucykgJwogICAgICAgICAgICAgICAgJ2J1dCB0ZWNoIHN0b2NrcyBmYWxsICh0aGVpciBmdXR1cmUgcHJvZml0cyBhcmUgd29ydGggbGVzcyB0b2RheSkuICcKICAgICAgICAgICAgICAgICdXYXRjaGluZyB3aGljaCBzZWN0b3JzIGFyZSBsZWFkaW5nIHZzIGxhZ2dpbmcgdGVsbHMgeW91IGEgbG90IGFib3V0IHdoZXJlIGludmVzdG9ycyAnCiAgICAgICAgICAgICAgICAndGhpbmsgdGhlIGVjb25vbXkgaXMgaGVhZGVkLicKICAgICAgICAgICAgKQogICAgICAgICksCiAgICAgICAgZGJjLlJvdyhbCiAgICAgICAgICAgIGRiYy5Db2woaHRtbC5EaXYoWwogICAgICAgICAgICAgICAgaHRtbC5MYWJlbCgnU2hvdyBwZXJmb3JtYW5jZSBvdmVyOicsIHN0eWxlPXsKICAgICAgICAgICAgICAgICAgICAnY29sb3InOiAnIzlDQTNBRicsICdmb250U2l6ZSc6ICcxMnB4JywgJ21hcmdpbkJvdHRvbSc6ICc2cHgnLAogICAgICAgICAgICAgICAgICAgICdkaXNwbGF5JzogJ2Jsb2NrJywKICAgICAgICAgICAgICAgIH0pLAogICAgICAgICAgICAgICAgZGNjLkRyb3Bkb3duKAogICAgICAgICAgICAgICAgICAgIGlkPSdwZXJpb2QtZHJvcGRvd24nLAogICAgICAgICAgICAgICAgICAgIG9wdGlvbnM9W3snbGFiZWwnOiBwLCAndmFsdWUnOiBwfSBmb3IgcCBpbiBQRVJJT0RTXSwKICAgICAgICAgICAgICAgICAgICB2YWx1ZT0nWVREJywKICAgICAgICAgICAgICAgICAgICBjbGVhcmFibGU9RmFsc2UsCiAgICAgICAgICAgICAgICAgICAgc3R5bGU9ewogICAgICAgICAgICAgICAgICAgICAgICAnd2lkdGgnOiAnMTMwcHgnLAogICAgICAgICAgICAgICAgICAgICAgICAnZm9udFNpemUnOiAnMTNweCcsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICksCiAgICAgICAgICAgIF0pLCB3aWR0aD0nYXV0bycpLAogICAgICAgIF0sIGNsYXNzTmFtZT0nbWItMycpLAogICAgICAgIGRjYy5HcmFwaChpZD0nY2hhcnQtc2VjdG9ycycsIGNvbmZpZz17J2Rpc3BsYXlNb2RlQmFyJzogRmFsc2V9KSwKCiAgICAgICAgaHRtbC5EaXYoc3R5bGU9eydoZWlnaHQnOiAnMzJweCd9KSwKCiAgICAgICAgIyDilIDilIAgTmV3cyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICAgICAgICBzZWN0aW9uX2hlYWRlcigKICAgICAgICAgICAgJ/Cfk7AgIE1hcmtldCBOZXdzJywKICAgICAgICAgICAgZXhwbGFpbmVyPSgKICAgICAgICAgICAgICAgICdUaGVzZSBhcmUgcmVjZW50IGhlYWRsaW5lcyB0aGF0IGFyZSBtb3ZpbmcgbWFya2V0cy4gJwogICAgICAgICAgICAgICAgJ0FzIHlvdSBsZWFybiB0aGUgY29uY2VwdHMgb24gdGhpcyBkYXNoYm9hcmQsIHlvdVwnbGwgc3RhcnQgdG8gdW5kZXJzdGFuZCAnCiAgICAgICAgICAgICAgICAnV0hZIHRoZXNlIGhlYWRsaW5lcyBtb3ZlIHN0b2NrcyDigJQgZm9yIGV4YW1wbGU6ICJGZWQgcmFpc2VzIHJhdGVzIiDihpIgJwogICAgICAgICAgICAgICAgJ2JvbmRzIGJlY29tZSBtb3JlIGF0dHJhY3RpdmUg4oaSIGludmVzdG9ycyBzZWxsIHN0b2NrcyDihpIgbWFya2V0IGZhbGxzLicKICAgICAgICAgICAgKQogICAgICAgICksCiAgICAgICAgaHRtbC5EaXYoaWQ9J25ld3MtcGFuZWwnKSwKCiAgICBdLCBmbHVpZD1UcnVlLCBjbGFzc05hbWU9J3B4LTMgcHgtbWQtNCcpLAoKICAgIGJ1aWxkX2Zvb3RlcigpLAogICAgZGNjLkludGVydmFsKGlkPSdyZWZyZXNoJywgaW50ZXJ2YWw9MzYwMCAqIDEwMDAsIG5faW50ZXJ2YWxzPTApLAoKXSwgc3R5bGU9eydiYWNrZ3JvdW5kQ29sb3InOiAnIzExMTgyNycsICdtaW5IZWlnaHQnOiAnMTAwdmgnfSkKCgojIOKUgOKUgCBDYWxsYmFja3Mg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgpAYXBwLmNhbGxiYWNrKAogICAgT3V0cHV0KCdrcGktcm93JywgICAgICAgICdjaGlsZHJlbicpLAogICAgT3V0cHV0KCdyZWNlc3Npb24tcGFuZWwnLCdjaGlsZHJlbicpLAogICAgT3V0cHV0KCdicmllZmluZy1wYW5lbCcsICdjaGlsZHJlbicpLAogICAgT3V0cHV0KCdjaGFydC1zcHknLCAgICAgICdmaWd1cmUnKSwKICAgIE91dHB1dCgnY2hhcnQtdml4JywgICAgICAnZmlndXJlJyksCiAgICBPdXRwdXQoJ2NoYXJ0LWZlZCcsICAgICAgJ2ZpZ3VyZScpLAogICAgT3V0cHV0KCdjaGFydC15aWVsZCcsICAgICdmaWd1cmUnKSwKICAgIE91dHB1dCgnbmV3cy1wYW5lbCcsICAgICAnY2hpbGRyZW4nKSwKICAgIElucHV0KCdyZWZyZXNoJywgJ25faW50ZXJ2YWxzJyksCikKZGVmIHJlZnJlc2hfYWxsKF8pOgogICAgZnJlZCAgICA9IGxvYWRfZnJlZCgpCiAgICBzZWN0b3JzID0gbG9hZF9zZWN0b3JzKCkKICAgIHNwcmVhZCAgPSBjb21wdXRlX3lpZWxkX3NwcmVhZChmcmVkKQogICAgc2NvcmUgICA9IGNvbXB1dGVfcmVjZXNzaW9uX3Njb3JlKGZyZWQsIHNwcmVhZCkKICAgIG5ld3MgICAgPSBnZXRfbWFya2V0X25ld3MoKQoKICAgIGZyb20gZGF0YSBpbXBvcnQgY29tcHV0ZV9zZWN0b3JfcmV0dXJucwogICAgc3B5X3JldHVybiA9IGNvbXB1dGVfc2VjdG9yX3JldHVybnMoc2VjdG9ycywgJ1lURCcpLmdldCgnU1BZJywgMC4wKQoKICAgIHJldHVybiAoCiAgICAgICAgYnVpbGRfa3BpX3JvdyhmcmVkLCBzcHJlYWQsIHNweV9yZXR1cm4pLAogICAgICAgIGJ1aWxkX3JlY2Vzc2lvbl9wYW5lbChzY29yZSksCiAgICAgICAgYnVpbGRfbWFya2V0X2JyaWVmaW5nKGZyZWQsIHNwcmVhZCwgc3B5X3JldHVybiksCiAgICAgICAgc3A1MDBfc21hX2NoYXJ0KHNlY3RvcnMpLAogICAgICAgIHN0cmVzc19jaGFydChmcmVkKSwKICAgICAgICBmZWRfcG9saWN5X2NoYXJ0KGZyZWQpLAogICAgICAgIHlpZWxkX2N1cnZlX2NoYXJ0KGZyZWQpLAogICAgICAgIGJ1aWxkX25ld3NfcGFuZWwobmV3cyksCiAgICApCgoKQGFwcC5jYWxsYmFjaygKICAgIE91dHB1dCgnY2hhcnQtc2VjdG9ycycsICdmaWd1cmUnKSwKICAgIElucHV0KCdwZXJpb2QtZHJvcGRvd24nLCAndmFsdWUnKSwKKQpkZWYgdXBkYXRlX3NlY3RvcnMocGVyaW9kKToKICAgIHNlY3RvcnMgPSBsb2FkX3NlY3RvcnMoKQogICAgZnJvbSBkYXRhIGltcG9ydCBjb21wdXRlX3NlY3Rvcl9yZXR1cm5zCiAgICByZXR1cm5zID0gY29tcHV0ZV9zZWN0b3JfcmV0dXJucyhzZWN0b3JzLCBwZXJpb2Qgb3IgJ1lURCcpCiAgICByZXR1cm4gc2VjdG9yX2Jhcl9jaGFydChyZXR1cm5zLCBwZXJpb2Qgb3IgJ1lURCcpCgoKaWYgX19uYW1lX18gPT0gJ19fbWFpbl9fJzoKICAgIGFwcC5ydW4oZGVidWc9VHJ1ZSkK
+"""
+app.py — Beginner learning dashboard entry point.
+
+Layout order (top to bottom):
+  1. Header
+  2. "What is this dashboard?" intro
+  3. Key indicators (KPI cards)
+  4. Recession risk
+  5. What's happening right now (briefing)
+  6. Charts: S&P 500, Fear index, Fed vs Inflation, Yield Curve
+  7. Sector performance (dropdown to change period)
+  8. News
+  9. Footer
+"""
+
+import dash
+from dash import dcc, html, Input, Output, State
+import dash_bootstrap_components as dbc
+from flask_caching import Cache
+
+from data import (
+    get_all_fred_data, get_sector_data,
+    compute_yield_spread, compute_sector_returns,
+    compute_recession_score, get_market_news,
+)
+from charts import (
+    sp500_sma_chart, fed_policy_chart, stress_chart,
+    yield_curve_chart, sector_bar_chart,
+)
+from layouts import (
+    build_header, build_footer, section_header,
+    build_kpi_row, build_recession_panel,
+    build_market_briefing, build_news_panel,
+    C, SECTOR_NAMES,
+)
+
+# ── Custom CSS ────────────────────────────────────────────────────────────────
+CSS = """
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    background-color: #111827 !important;
+    font-family: Inter, system-ui, sans-serif !important;
+    color: #F9FAFB !important;
+    margin: 0;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+
+.card, .card-body { background: transparent !important; border: none !important; padding: 0 !important; }
+
+/* Accordion styling */
+.accordion-button { font-size: 12px !important; padding: 6px 0 !important; }
+.accordion-button:not(.collapsed) { box-shadow: none !important; }
+.accordion-body { padding: 8px 0 !important; }
+
+/* News hover */
+a { color: #60A5FA !important; }
+a:hover { color: #93C5FD !important; }
+
+.intro-box {
+    background: #1F2937;
+    border: 1px solid #374151;
+    border-left: 4px solid #60A5FA;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+}
+
+.section-spacer { height: 28px; }
+"""
+
+# ── App init ─────────────────────────────────────────────────────────────────
+app = dash.Dash(
+    __name__,
+    external_stylesheets=[dbc.themes.DARKLY],
+    meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}],
+    suppress_callback_exceptions=True,
+)
+app.title = 'Stock Market Learning Dashboard'
+server = app.server
+
+app.index_string = f'''<!DOCTYPE html>
+<html>
+<head>
+    {{%metas%}}
+    <title>{{%title%}}</title>
+    {{%favicon%}}
+    {{%css%}}
+    <style>{CSS}</style>
+</head>
+<body>
+    {{%app_entry%}}
+    <footer>{{%config%}}{{%scripts%}}{{%renderer%}}</footer>
+</body>
+</html>'''
+
+# ── Cache ─────────────────────────────────────────────────────────────────────
+cache = Cache(server, config={
+    'CACHE_TYPE': 'FileSystemCache',
+    'CACHE_DIR': 'cache-directory',
+    'CACHE_DEFAULT_TIMEOUT': 3600,
+})
+
+
+@cache.memoize(timeout=3600)
+def load_fred():
+    return get_all_fred_data()
+
+
+@cache.memoize(timeout=3600)
+def load_sectors():
+    return get_sector_data()
+
+
+# ── Period options for sector chart ──────────────────────────────────────────
+PERIODS = ['YTD', '1M', '3M', '6M', '1Y']
+
+# ── Layout ────────────────────────────────────────────────────────────────────
+app.layout = html.Div([
+    build_header(),
+
+    dbc.Container([
+
+        # Intro explainer
+        html.Div(style={'height': '24px'}),
+        html.Div([
+            html.H5('How to use this dashboard', style={
+                'color': '#F9FAFB', 'fontWeight': '700', 'marginBottom': '10px',
+            }),
+            html.P([
+                'This dashboard shows you the real economic forces that move stock prices — updated hourly. ',
+                'Every number has a plain-English explanation below it. ',
+                'Click the ',
+                html.Strong('"What does this mean?"'),
+                ' buttons under each section to learn why each metric matters.',
+            ], style={'color': '#9CA3AF', 'fontSize': '13px', 'lineHeight': '1.8', 'margin': '0'}),
+        ], className='intro-box'),
+
+        # ── Key Indicators ───────────────────────────────────────────────────
+        section_header(
+            '📊  Key Market Indicators',
+            explainer=(
+                'These are the most important numbers watched by professional investors every day. '
+                'Together they tell you: Is the economy growing or shrinking? Are investors nervous or calm? '
+                'Is borrowing cheap or expensive? Each card shows the current number AND what it means right now.'
+            )
+        ),
+        html.Div(id='kpi-row'),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── Recession Risk ───────────────────────────────────────────────────
+        section_header(
+            '🚦  Recession Risk Score',
+            explainer=(
+                'A recession is when the economy shrinks for two or more quarters in a row — businesses earn less, '
+                'unemployment rises, and stock prices usually fall significantly. '
+                'This score tracks 6 warning signals that economists watch. '
+                'It is NOT a guarantee — it is a probability estimate based on historical patterns. '
+                'The yield curve inversion signal alone has preceded every US recession since 1960.'
+            )
+        ),
+        html.Div(id='recession-panel'),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── What's happening now ─────────────────────────────────────────────
+        section_header(
+            '📰  What\'s Happening Right Now',
+            explainer=(
+                'This section translates the raw numbers into plain-English stories. '
+                'Think of it as a quick brief on the main forces shaping the market today.'
+            )
+        ),
+        html.Div(id='briefing-panel'),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── S&P 500 chart ────────────────────────────────────────────────────
+        section_header(
+            '📈  Is the Stock Market Trending Up or Down?',
+            explainer=(
+                'The S&P 500 (tracked by the SPY ETF) contains 500 of the largest US companies. '
+                'When you hear "the market is up today," this is what they\'re talking about. '
+                'The dotted yellow line is the 200-day moving average — the long-term trend. '
+                'When the price is above the yellow line, the market is in a long-term uptrend (bullish). '
+                'When it falls below, it may signal a longer-term downturn (bearish).'
+            )
+        ),
+        dcc.Graph(id='chart-spy', config={'displayModeBar': False}),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── Fear index ───────────────────────────────────────────────────────
+        section_header(
+            '😰  How Scared Are Investors? (VIX Fear Index)',
+            explainer=(
+                'The VIX measures how much investors expect prices to swing in the next 30 days. '
+                'It\'s calculated from options prices — when investors pay a lot to protect against losses, VIX rises. '
+                'Below 15 = calm and complacent. '
+                '15-25 = normal uncertainty. '
+                '25-35 = elevated worry. '
+                'Above 35 = panic (happened during COVID crash, 2008 crisis, etc.). '
+                'Interestingly, high VIX often marks a market BOTTOM — extreme fear can be a buying opportunity for long-term investors.'
+            )
+        ),
+        dcc.Graph(id='chart-vix', config={'displayModeBar': False}),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── Fed & Inflation ──────────────────────────────────────────────────
+        section_header(
+            '🏦  The Fed vs Inflation — The Most Important Battle in Markets',
+            explainer=(
+                'The Federal Reserve (the Fed) controls interest rates to keep inflation around 2%. '
+                'When inflation gets too high, the Fed raises rates to make borrowing expensive — '
+                'this slows spending and hiring, which brings prices down. But higher rates also '
+                'make stocks less attractive (bonds pay more) and slow economic growth. '
+                'This is why investors watch every Fed meeting so closely. '
+                'The red line = Fed\'s rate. The yellow line = actual inflation. '
+                'When the red is above the yellow, "real" rates are positive (restrictive). '
+                'The green dotted line = the Fed\'s 2% target.'
+            )
+        ),
+        dcc.Graph(id='chart-fed', config={'displayModeBar': False}),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── Yield Curve ──────────────────────────────────────────────────────
+        section_header(
+            '📉  The Yield Curve — Why Bonds Predict Recessions',
+            explainer=(
+                'Bonds are loans you give to the government. In return, the government pays you interest. '
+                'Normally, loans that last longer (10 years) pay more interest than short-term loans (2 years) — '
+                'because you\'re tying up money for longer. '
+                'But sometimes short-term rates go HIGHER than long-term rates. This is called an "inversion." '
+                'Why does it matter? Because it means investors are so worried about the near-term economy '
+                'that they\'re fleeing to long-term bonds, driving those rates down. '
+                'An inverted yield curve has preceded every US recession in the last 60 years. '
+                'Red shading below zero = inverted (warning). Green above zero = healthy.'
+            )
+        ),
+        dcc.Graph(id='chart-yield', config={'displayModeBar': False}),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── Sectors ──────────────────────────────────────────────────────────
+        section_header(
+            '🏭  Sector Performance — Which Parts of the Economy Are Winning?',
+            explainer=(
+                'The stock market isn\'t one thing — it\'s made up of different sectors (industries). '
+                'Technology, Healthcare, Energy, Banks — each sector responds differently to the economy. '
+                'For example: when interest rates rise, banks do better (they earn more on loans) '
+                'but tech stocks fall (their future profits are worth less today). '
+                'Watching which sectors are leading vs lagging tells you a lot about where investors '
+                'think the economy is headed.'
+            )
+        ),
+        dbc.Row([
+            dbc.Col(html.Div([
+                html.Label('Show performance over:', style={
+                    'color': '#9CA3AF', 'fontSize': '12px', 'marginBottom': '6px',
+                    'display': 'block',
+                }),
+                dcc.Dropdown(
+                    id='period-dropdown',
+                    options=[{'label': p, 'value': p} for p in PERIODS],
+                    value='YTD',
+                    clearable=False,
+                    style={
+                        'width': '130px',
+                        'fontSize': '13px',
+                    },
+                ),
+            ]), width='auto'),
+        ], className='mb-3'),
+        dcc.Graph(id='chart-sectors', config={'displayModeBar': False}),
+
+        html.Div(style={'height': '32px'}),
+
+        # ── News ─────────────────────────────────────────────────────────────
+        section_header(
+            '📰  Market News',
+            explainer=(
+                'These are recent headlines that are moving markets. '
+                'As you learn the concepts on this dashboard, you\'ll start to understand '
+                'WHY these headlines move stocks — for example: "Fed raises rates" → '
+                'bonds become more attractive → investors sell stocks → market falls.'
+            )
+        ),
+        html.Div(id='news-panel'),
+
+    ], fluid=True, className='px-3 px-md-4'),
+
+    build_footer(),
+    dcc.Interval(id='refresh', interval=3600 * 1000, n_intervals=0),
+
+], style={'backgroundColor': '#111827', 'minHeight': '100vh'})
+
+
+# ── Callbacks ─────────────────────────────────────────────────────────────────
+
+@app.callback(
+    Output('kpi-row',        'children'),
+    Output('recession-panel','children'),
+    Output('briefing-panel', 'children'),
+    Output('chart-spy',      'figure'),
+    Output('chart-vix',      'figure'),
+    Output('chart-fed',      'figure'),
+    Output('chart-yield',    'figure'),
+    Output('news-panel',     'children'),
+    Input('refresh', 'n_intervals'),
+)
+def refresh_all(_):
+    fred    = load_fred()
+    sectors = load_sectors()
+    spread  = compute_yield_spread(fred)
+    score   = compute_recession_score(fred, spread)
+    news    = get_market_news()
+
+    from data import compute_sector_returns
+    spy_return = compute_sector_returns(sectors, 'YTD').get('SPY', 0.0)
+
+    return (
+        build_kpi_row(fred, spread, spy_return),
+        build_recession_panel(score),
+        build_market_briefing(fred, spread, spy_return),
+        sp500_sma_chart(sectors),
+        stress_chart(fred),
+        fed_policy_chart(fred),
+        yield_curve_chart(fred),
+        build_news_panel(news),
+    )
+
+
+@app.callback(
+    Output('chart-sectors', 'figure'),
+    Input('period-dropdown', 'value'),
+)
+def update_sectors(period):
+    sectors = load_sectors()
+    from data import compute_sector_returns
+    returns = compute_sector_returns(sectors, period or 'YTD')
+    return sector_bar_chart(returns, period or 'YTD')
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8050, debug=False)
