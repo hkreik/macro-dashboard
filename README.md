@@ -1,5 +1,9 @@
 # Macro-Equity Dashboard
 
+[![CI](https://github.com/hkreik/macro-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/hkreik/macro-dashboard/actions/workflows/ci.yml)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 A live macro-economic dashboard that tracks key Federal Reserve data and equity market indicators, synthesizes them into plain-English analysis, and identifies which macro variables have historically moved the S&P 500.
 
 **Live demo:** *(add your Render URL here once deployed)*
@@ -18,15 +22,15 @@ The dashboard answers four questions in real time:
 It also includes:
 
 - **Market Briefing** — auto-generated plain-English summary of current conditions, updated from live data on every page load
-- **Recession Risk Score** — a composite 0–100 score built from 5 historically reliable signals (yield curve, unemployment trend, credit spreads, consumer sentiment, VIX)
-- **Correlation Analysis** — Pearson correlations between 7 macro indicators and monthly S&P 500 returns, computed across 60 months of data to identify which FRED series have a statistically meaningful relationship with market performance
+- **Recession Risk Score** — a composite 0-100 score built from 5 historically reliable signals (yield curve, unemployment trend, credit spreads, consumer sentiment, VIX)
+- **Correlation Analysis** — Pearson correlations between 7 macro indicators and monthly S&P 500 returns over 60 months
 
 ---
 
 ## Data Sources
 
 | Source | What it provides |
-|--------|-----------------|
+|---------|------------------|
 | [FRED (Federal Reserve Economic Data)](https://fred.stlouisfed.org/) | Inflation, Fed Funds Rate, Unemployment, Yield Curve, VIX, Credit Spreads, Consumer Sentiment |
 | [Yahoo Finance](https://finance.yahoo.com/) | Daily closing prices for SPY, QQQ, DIA, IWM, and 11 sector ETFs |
 
@@ -50,36 +54,83 @@ Data is cached for 1 hour per session.
 ## Key Analytical Decisions
 
 **Why Pearson correlation for the macro analysis?**
-Pearson correlation measures the linear relationship between two variables on a -1 to +1 scale. I computed it between monthly values of each FRED indicator and the S&P 500's return that same month, over a 60-month window. This gives a data-driven answer to the question: *which macro variables actually move with the market?* The result — VIX at -0.59, credit spreads at -0.28 — confirms what finance theory predicts: fear and stress indicators move opposite to equity returns.
+Pearson correlation measures the linear relationship between two variables on a -1 to +1 scale. Computed between monthly FRED indicators and SPY returns over 60 months — VIX at -0.59, credit spreads at -0.28 confirms that fear and stress indicators move opposite to equity returns.
 
 **Why the 200-day moving average as the trend signal?**
-The 200-day SMA is the single most widely used trend indicator among professional investors. When price is above it, the market is considered to be in an uptrend; below it, a downtrend. It filters out short-term noise and reflects the underlying momentum over approximately one trading year.
+The 200-day SMA is the most widely used trend indicator among professional investors. It filters out short-term noise and reflects the true medium-term trend.
 
-**Why a composite recession score instead of a single indicator?**
-No single indicator reliably predicts recessions. The yield curve is the most historically accurate, but it has produced false positives. By combining the yield curve, unemployment trend, credit spreads, consumer sentiment, and VIX into a weighted score, the dashboard reduces noise and provides a more robust risk gauge — similar to how the Conference Board constructs its Leading Economic Index.
+**Why a composite Recession Risk Score?**
+No single indicator reliably predicts recessions. By combining 5 signals (yield curve inversion, unemployment trend, credit spreads, consumer sentiment, VIX), the score reduces false positives and captures multiple dimensions of economic stress.
 
 ---
 
-## Running Locally
+## Local Development
+
+### Prerequisites
+- Python 3.11
+- A free [FRED API key](https://fred.stlouisfed.org/docs/api/api_key.html)
+
+### Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/macro-dashboard.git
+git clone https://github.com/hkreik/macro-dashboard.git
 cd macro-dashboard
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
-Create a `.env` file:
+Create a `.env` file (see `.env.example`):
 ```
 FRED_API_KEY=your_key_here
 ```
 
-Get a free FRED API key at [research.stlouisfed.org/fred2](https://research.stlouisfed.org/fred2/).
+Install pre-commit hooks:
+```bash
+pre-commit install
+```
 
+Run locally:
 ```bash
 python app.py
 ```
 
-Open [http://127.0.0.1:8050](http://127.0.0.1:8050).
+Open http://localhost:8050
+
+### Running Tests
+
+```bash
+pytest                              # run all tests
+pytest --cov=. --cov-report=html    # with HTML coverage report
+```
+
+### Linting
+
+```bash
+ruff check .     # lint
+ruff format .    # auto-format
+```
+
+---
+
+## CI/CD
+
+Every push triggers GitHub Actions (`.github/workflows/ci.yml`) which:
+
+1. Installs all dependencies
+2. Runs `ruff check` and `ruff format --check`
+3. Runs `pytest` with coverage (fails if below 70%)
+4. Uploads coverage to Codecov
+
+---
+
+## Deployment (Render)
+
+1. Push to GitHub
+2. Connect repo to [Render](https://render.com)
+3. Set `FRED_API_KEY` in Render environment variables
+4. Deploy — `render.yaml` handles the rest
 
 ---
 
@@ -87,9 +138,21 @@ Open [http://127.0.0.1:8050](http://127.0.0.1:8050).
 
 ```
 macro-dashboard/
-├── app.py          # Dash layout, callbacks, and narrative generation
-├── data.py         # FRED + Yahoo Finance data fetching and computation
-├── charts.py       # Plotly chart builders
-├── requirements.txt
-└── render.yaml     # Render deployment config
+├── .github/
+│   └── workflows/
+│       └── ci.yml           # GitHub Actions CI pipeline
+├── tests/
+│   ├── __init__.py
+│   ├── test_data.py         # Tests for data analytics functions
+│   └── test_charts.py       # Tests for Plotly chart builders
+├── app.py                   # Dash app, layout, callbacks
+├── data.py                  # Data fetching (FRED + yfinance) and analytics
+├── charts.py                # Plotly chart builders
+├── requirements.txt         # Production dependencies
+├── requirements-dev.txt     # Dev dependencies (pytest, ruff, pre-commit)
+├── ruff.toml                # Ruff linter/formatter config
+├── pytest.ini               # Pytest config
+├── .pre-commit-config.yaml  # Pre-commit hooks
+├── .env.example             # Environment variable template
+└── render.yaml              # Render deployment config
 ```
