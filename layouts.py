@@ -1,1 +1,492 @@
-IiIiCmxheW91dHMucHkg4oCUIEJlZ2lubmVyLWZyaWVuZGx5IGxlYXJuaW5nIGRhc2hib2FyZCBjb21wb25lbnRzLgoKUGhpbG9zb3BoeTogRXZlcnkgbnVtYmVyIGhhcyBhIHBsYWluLUVuZ2xpc2ggbGFiZWwgZXhwbGFpbmluZyB3aGF0IGl0IG1lYW5zLgpFdmVyeSBzZWN0aW9uIGhhcyBhbiBleHBhbmRhYmxlIGFjY29yZGlvbiBleHBsYWluaW5nIFdIWSBpdCBtYXR0ZXJzIHRvIHN0b2Nrcy4KTm8gamFyZ29uLiBObyBhY3JvbnltcyB3aXRob3V0IGV4cGxhbmF0aW9uLiBDYXVzZS1hbmQtZWZmZWN0IGxhbmd1YWdlIHRocm91Z2hvdXQuCiIiIgoKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUsIHRpbWV6b25lCmltcG9ydCBkYXNoX2Jvb3RzdHJhcF9jb21wb25lbnRzIGFzIGRiYwpmcm9tIGRhc2ggaW1wb3J0IGh0bWwKCiMg4pSA4pSAIENvbG91ciBwYWxldHRlIChzb2Z0IGRhcmsg4oCUIHJlYWRhYmxlLCBub3QgaW50aW1pZGF0aW5nKSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKQyA9IHsKICAgICdiZyc6ICAgICAgICcjMTExODI3JywgICAjIGRhcmsgYmx1ZS1ncmF5CiAgICAnc3VyZmFjZSc6ICAnIzFGMjkzNycsICAgIyBjYXJkIGJhY2tncm91bmQKICAgICdib3JkZXInOiAgICcjMzc0MTUxJywgICAjIHN1YnRsZSBib3JkZXIKICAgICdhY2NlbnQnOiAgICcjNjBBNUZBJywgICAjIHNvZnQgYmx1ZQogICAgJ3Bvc2l0aXZlJzogJyMzNEQzOTknLCAgICMgZ3JlZW4KICAgICduZWdhdGl2ZSc6ICcjRjg3MTcxJywgICAjIHJlZAogICAgJ3dhcm5pbmcnOiAgJyNGQkJGMjQnLCAgICMgYW1iZXIKICAgICd0ZXh0JzogICAgICcjRjlGQUZCJywgICAjIG5lYXItd2hpdGUKICAgICdzdWJ0ZXh0JzogICcjOUNBM0FGJywgICAjIGdyYXkKICAgICdtdXRlZCc6ICAgICcjNkI3MjgwJywgICAjIGRhcmsgZ3JheQp9CgpDQVJEID0gewogICAgJ2JhY2tncm91bmRDb2xvcic6IENbJ3N1cmZhY2UnXSwKICAgICdib3JkZXInOiBmIjFweCBzb2xpZCB7Q1snYm9yZGVyJ119IiwKICAgICdib3JkZXJSYWRpdXMnOiAnOHB4JywKICAgICdwYWRkaW5nJzogJzE4cHggMjJweCcsCn0KCgojIOKUgOKUgCBIZWFkZXIg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgpkZWYgYnVpbGRfaGVhZGVyKCkgLT4gaHRtbC5EaXY6CiAgICByZXR1cm4gaHRtbC5EaXYoCiAgICAgICAgZGJjLkNvbnRhaW5lcigKICAgICAgICAgICAgZGJjLlJvdyhbCiAgICAgICAgICAgICAgICBkYmMuQ29sKGh0bWwuRGl2KFsKICAgICAgICAgICAgICAgICAgICBodG1sLlNwYW4oJ/Cfk4gnLCBzdHlsZT17J2ZvbnRTaXplJzogJzE4cHgnLCAnbWFyZ2luUmlnaHQnOiAnMTBweCd9KSwKICAgICAgICAgICAgICAgICAgICBodG1sLlNwYW4oJ1N0b2NrIE1hcmtldCBMZWFybmluZyBEYXNoYm9hcmQnLCBzdHlsZT17CiAgICAgICAgICAgICAgICAgICAgICAgICdjb2xvcic6IENbJ3RleHQnXSwgJ2ZvbnRXZWlnaHQnOiAnNzAwJywgJ2ZvbnRTaXplJzogJzE1cHgnLAogICAgICAgICAgICAgICAgICAgIH0pLAogICAgICAgICAgICAgICAgXSwgc3R5bGU9eydkaXNwbGF5JzogJ2ZsZXgnLCAnYWxpZ25JdGVtcyc6ICdjZW50ZXInfSksIHdpZHRoPSdhdXRvJyksCiAgICAgICAgICAgICAgICBkYmMuQ29sKGh0bWwuU3BhbigKICAgICAgICAgICAgICAgICAgICAnVXBkYXRlZCBldmVyeSBob3VyICDigKIgIEFsbCBkYXRhIGZyb20gcHVibGljIHNvdXJjZXMnLAogICAgICAgICAgICAgICAgICAgIHN0eWxlPXsnY29sb3InOiBDWydzdWJ0ZXh0J10sICdmb250U2l6ZSc6ICcxMnB4J30KICAgICAgICAgICAgICAgICksIGNsYXNzTmFtZT0nZC1mbGV4IGFsaWduLWl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNvbnRlbnQtZW5kJyksCiAgICAgICAgICAgIF0sIGFsaWduPSdjZW50ZXInLCBjbGFzc05hbWU9J3B5LTMnKSwKICAgICAgICAgICAgZmx1aWQ9VHJ1ZSwKICAgICAgICApLAogICAgICAgIHN0eWxlPXsKICAgICAgICAgICAgJ2JhY2tncm91bmRDb2xvcic6IENbJ3N1cmZhY2UnXSwKICAgICAgICAgICAgJ2JvcmRlckJvdHRvbSc6IGYiMXB4IHNvbGlkIHtDWydib3JkZXInXX0iLAogICAgICAgIH0KICAgICkKCgojIOKUgOKUgCBTZWN0aW9uIGhlYWRlciB3aXRoIG9wdGlvbmFsIGV4cGxhaW5lciBhY2NvcmRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgpkZWYgc2VjdGlvbl9oZWFkZXIodGl0bGU6IHN0ciwgZXhwbGFpbmVyOiBzdHIgPSAnJykgLT4gaHRtbC5EaXY6CiAgICAiIiJCb2xkIHNlY3Rpb24gdGl0bGUgKyBvcHRpb25hbCBjb2xsYXBzaWJsZSAnV2hhdCBkb2VzIHRoaXMgbWVhbj8nIGJveC4iIiIKICAgIGNoaWxkcmVuID0gWwogICAgICAgIGh0bWwuSDYodGl0bGUsIHN0eWxlPXsKICAgICAgICAgICAgJ2NvbG9yJzogQ1sndGV4dCddLCAnZm9udFdlaWdodCc6ICc3MDAnLAogICAgICAgICAgICAnZm9udFNpemUnOiAnMTRweCcsICdtYXJnaW5Cb3R0b20nOiAnNHB4JywKICAgICAgICB9KSwKICAgIF0KICAgIGlmIGV4cGxhaW5lcjoKICAgICAgICBjaGlsZHJlbi5hcHBlbmQoCiAgICAgICAgICAgIGRiYy5BY2NvcmRpb24oWwogICAgICAgICAgICAgICAgZGJjLkFjY29yZGlvbkl0ZW0oCiAgICAgICAgICAgICAgICAgICAgaHRtbC5QKGV4cGxhaW5lciwgc3R5bGU9ewogICAgICAgICAgICAgICAgICAgICAgICAnY29sb3InOiBDWydzdWJ0ZXh0J10sICdmb250U2l6ZSc6ICcxM3B4JywKICAgICAgICAgICAgICAgICAgICAgICAgJ2xpbmVIZWlnaHQnOiAnMS43JywgJ21hcmdpbic6ICcwJywKICAgICAgICAgICAgICAgICAgICB9KSwKICAgICAgICAgICAgICAgICAgICB0aXRsZT0nV2hhdCBkb2VzIHRoaXMgbWVhbj8g4pa+JywKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgXSwgc3RhcnRfY29sbGFwc2VkPVRydWUsIGZsdXNoPVRydWUsIHN0eWxlPXsKICAgICAgICAgICAgICAgICdtYXJnaW5Cb3R0b20nOiAnOHB4JywKICAgICAgICAgICAgICAgICctLWJzLWFjY29yZGlvbi1iZyc6IENbJ3N1cmZhY2UnXSwKICAgICAgICAgICAgICAgICctLWJzLWFjY29yZGlvbi1ib3JkZXItY29sb3InOiBDWydib3JkZXInXSwKICAgICAgICAgICAgICAgICctLWJzLWFjY29yZGlvbi1idG4tY29sb3InOiBDWydhY2NlbnQnXSwKICAgICAgICAgICAgICAgICctLWJzLWFjY29yZGlvbi1idG4tYmcnOiBDWydzdXJmYWNlJ10sCiAgICAgICAgICAgICAgICAnLS1icy1hY2NvcmRpb24tYWN0aXZlLWJnJzogQ1snc3VyZmFjZSddLAogICAgICAgICAgICAgICAgJy0tYnMtYWNjb3JkaW9uLWFjdGl2ZS1jb2xvcic6IENbJ2FjY2VudCddLAogICAgICAgICAgICAgICAgJy0tYnMtYWNjb3JkaW9uLWJvZHktcGFkZGluZy14JzogJzAnLAogICAgICAgICAgICAgICAgJy0tYnMtYWNjb3JkaW9uLWJvZHktcGFkZGluZy15JzogJzhweCcsCiAgICAgICAgICAgICAgICAnZm9udFNpemUnOiAnMTJweCcsCiAgICAgICAgICAgIH0pCiAgICAgICAgKQogICAgY2hpbGRyZW4uYXBwZW5kKGh0bWwuSHIoc3R5bGU9ewogICAgICAgICdib3JkZXJDb2xvcic6IENbJ2JvcmRlciddLCAnbWFyZ2luVG9wJzogJzZweCcsCiAgICAgICAgJ21hcmdpbkJvdHRvbSc6ICcxNnB4JywgJ29wYWNpdHknOiAnMScsCiAgICB9KSkKICAgIHJldHVybiBodG1sLkRpdihjaGlsZHJlbikKCgojIOKUgOKUgCBQbGFpbi1FbmdsaXNoIEtQSSBjYXJkIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAoKZGVmIGtwaV9jYXJkKHRpdGxlOiBzdHIsIHZhbHVlOiBzdHIsIG1lYW5pbmc6IHN0ciwgY29sb3I6IHN0ciA9IE5vbmUpIC0+IGRiYy5Db2w6CiAgICAiIiIKICAgIHRpdGxlOiAgIFNob3J0IGxhYmVsIGUuZy4gJ1MmUCA1MDAgVGhpcyBZZWFyJwogICAgdmFsdWU6ICAgVGhlIG51bWJlciBlLmcuICcrOC4zJScKICAgIG1lYW5pbmc6IE9uZSBwbGFpbi1FbmdsaXNoIHNlbnRlbmNlIGFib3V0IHdoYXQgaXQgbWVhbnMgUklHSFQgTk9XCiAgICBjb2xvcjogICBPdmVycmlkZSBib3JkZXIvdmFsdWUgY29sb3IKICAgICIiIgogICAgdmFsX2NvbG9yID0gY29sb3Igb3IgQ1sndGV4dCddCiAgICBib3JkZXJfbGVmdCA9IGNvbG9yIG9yIENbJ2JvcmRlciddCiAgICByZXR1cm4gZGJjLkNvbCgKICAgICAgICBodG1sLkRpdihbCiAgICAgICAgICAgIGh0bWwuRGl2KHRpdGxlLCBzdHlsZT17CiAgICAgICAgICAgICAgICAnY29sb3InOiBDWydzdWJ0ZXh0J10sICdmb250U2l6ZSc6ICcxMXB4JywKICAgICAgICAgICAgICAgICdmb250V2VpZ2h0JzogJzYwMCcsICdtYXJnaW5Cb3R0b20nOiAnOHB4JywKICAgICAgICAgICAgICAgICd0ZXh0VHJhbnNmb3JtJzogJ3VwcGVyY2FzZScsICdsZXR0ZXJTcGFjaW5nJzogJzAuMDVlbScsCiAgICAgICAgICAgIH0pLAogICAgICAgICAgICBodG1sLkRpdih2YWx1ZSwgc3R5bGU9ewogICAgICAgICAgICAgICAgJ2NvbG9yJzogdmFsX2NvbG9yLCAnZm9udFNpemUnOiAnMjZweCcsCiAgICAgICAgICAgICAgICAnZm9udFdlaWdodCc6ICc3MDAnLCAnZm9udEZhbWlseSc6ICdtb25vc3BhY2UnLAogICAgICAgICAgICAgICAgJ2xpbmVIZWlnaHQnOiAnMScsICdtYXJnaW5Cb3R0b20nOiAnOHB4JywKICAgICAgICAgICAgfSksCiAgICAgICAgICAgIGh0bWwuRGl2KG1lYW5pbmcsIHN0eWxlPXsKICAgICAgICAgICAgICAgICdjb2xvcic6IENbJ3N1YnRleHQnXSwgJ2ZvbnRTaXplJzogJzEycHgnLAogICAgICAgICAgICAgICAgJ2xpbmVIZWlnaHQnOiAnMS41JywKICAgICAgICAgICAgfSksCiAgICAgICAgXSwgc3R5bGU9eyoqQ0FSRCwgJ2JvcmRlckxlZnQnOiBmJzNweCBzb2xpZCB7Ym9yZGVyX2xlZnR9J30pLAogICAgICAgIHhzPTEyLCBzbT02LCBtZD00LCBsZz0zLCBjbGFzc05hbWU9J21iLTMnCiAgICApCgoKIyDilIDilIAgS1BJIHJvdyBidWlsZGVyIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAoKZGVmIGJ1aWxkX2twaV9yb3coZnJlZF9kZiwgc3ByZWFkLCBzcHlfcmV0dXJuKSAtPiBodG1sLkRpdjoKICAgIHRyeToKICAgICAgICBpbmZsYXRpb24gPSBmcmVkX2RmWydDUEkgSW5mbGF0aW9uIChUcmltbWVkIE1lYW4pJ10uZHJvcG5hKCkuaWxvY1stMV0KICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgaW5mbGF0aW9uID0gTm9uZQoKICAgIHRyeToKICAgICAgICBmZWRfcmF0ZSA9IGZyZWRfZGZbJ0ZlZGVyYWwgRnVuZHMgUmF0ZSddLmRyb3BuYSgpLmlsb2NbLTFdCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIGZlZF9yYXRlID0gTm9uZQoKICAgIHRyeToKICAgICAgICB2aXggPSBmcmVkX2RmWydWSVgnXS5kcm9wbmEoKS5pbG9jWy0xXQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICB2aXggPSBOb25lCgogICAgdHJ5OgogICAgICAgIHNwcmVhZF92YWwgPSBzcHJlYWQuZHJvcG5hKCkuaWxvY1stMV0KICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgc3ByZWFkX3ZhbCA9IE5vbmUKCiAgICB0cnk6CiAgICAgICAgdW5lbXAgPSBmcmVkX2RmWydVbmVtcGxveW1lbnQgUmF0ZSddLmRyb3BuYSgpLmlsb2NbLTFdCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIHVuZW1wID0gTm9uZQoKICAgIHRyeToKICAgICAgICBzZW50aW1lbnQgPSBmcmVkX2RmWydDb25zdW1lciBTZW50aW1lbnQnXS5kcm9wbmEoKS5pbG9jWy0xXQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBzZW50aW1lbnQgPSBOb25lCgogICAgY2FyZHMgPSBbXQoKICAgICMgUyZQIDUwMAogICAgc3B5X2NvbG9yID0gQ1sncG9zaXRpdmUnXSBpZiBzcHlfcmV0dXJuID49IDAgZWxzZSBDWyduZWdhdGl2ZSddCiAgICBzcHlfbWVhbmluZyA9ICgKICAgICAgICAnVGhlIGJyb2FkIFVTIHN0b2NrIG1hcmtldCBpcyBVUCBzbyBmYXIgdGhpcyB5ZWFyIOKAlCBpbnZlc3RvcnMgYXJlIGdlbmVyYWxseSBvcHRpbWlzdGljLicKICAgICAgICBpZiBzcHlfcmV0dXJuID49IDAKICAgICAgICBlbHNlICdUaGUgYnJvYWQgVVMgc3RvY2sgbWFya2V0IGlzIERPV04gc28gZmFyIHRoaXMgeWVhciDigJQgaW52ZXN0b3JzIGFyZSBjYXV0aW91cyBvciBzZWxsaW5nLicKICAgICkKICAgIGNhcmRzLmFwcGVuZChrcGlfY2FyZCgnUyZQIDUwMCBUaGlzIFllYXInLCBmJ3tzcHlfcmV0dXJuOisuMWZ9JScsIHNweV9tZWFuaW5nLCBzcHlfY29sb3IpKQoKICAgICMgVklYCiAgICBpZiB2aXggaXMgbm90IE5vbmU6CiAgICAgICAgaWYgdml4IDwgMTU6CiAgICAgICAgICAgIHZpeF9jb2xvciA9IENbJ3Bvc2l0aXZlJ10KICAgICAgICAgICAgdml4X21lYW5pbmcgPSAnVmVyeSBjYWxtIG1hcmtldHMuIEludmVzdG9ycyBhcmUgbm90IHdvcnJpZWQgYWJvdXQgYmlnIHN3aW5ncy4nCiAgICAgICAgZWxpZiB2aXggPCAyNToKICAgICAgICAgICAgdml4X2NvbG9yID0gQ1sndGV4dCddCiAgICAgICAgICAgIHZpeF9tZWFuaW5nID0gJ05vcm1hbCBsZXZlbCBvZiB1bmNlcnRhaW50eS4gTWFya2V0cyBhcmUgbW92aW5nIGJ1dCBub3RoaW5nIGFsYXJtaW5nLicKICAgICAgICBlbGlmIHZpeCA8IDM1OgogICAgICAgICAgICB2aXhfY29sb3IgPSBDWyd3YXJuaW5nJ10KICAgICAgICAgICAgdml4X21lYW5pbmcgPSAnRWxldmF0ZWQgZmVhci4gSW52ZXN0b3JzIGV4cGVjdCBsYXJnZXItdGhhbi1ub3JtYWwgcHJpY2Ugc3dpbmdzIHNvb24uJwogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHZpeF9jb2xvciA9IENbJ25lZ2F0aXZlJ10KICAgICAgICAgICAgdml4X21lYW5pbmcgPSAnUGFuaWMgbW9kZS4gTWFya2V0cyBhcmUgdmVyeSB1bmNlcnRhaW4g4oCUIHRoaXMgbGV2ZWwgaXMgcmFyZSBhbmQgc2VyaW91cy4nCiAgICAgICAgY2FyZHMuYXBwZW5kKGtwaV9jYXJkKCdGZWFyIEluZGV4IChWSVgpJywgZid7dml4Oi4xZn0nLCB2aXhfbWVhbmluZywgdml4X2NvbG9yKSkKCiAgICAjIEZlZCBSYXRlCiAgICBpZiBmZWRfcmF0ZSBpcyBub3QgTm9uZToKICAgICAgICBpZiBmZWRfcmF0ZSA+IDQ6CiAgICAgICAgICAgIHJhdGVfbWVhbmluZyA9ICdCb3Jyb3dpbmcgaXMgZXhwZW5zaXZlLiBUaGlzIHNsb3dzIHNwZW5kaW5nIGFuZCBjYW4gcHJlc3N1cmUgc3RvY2tzLicKICAgICAgICBlbGlmIGZlZF9yYXRlID4gMjoKICAgICAgICAgICAgcmF0ZV9tZWFuaW5nID0gJ1JhdGVzIGFyZSBtb2RlcmF0ZS4gQm9ycm93aW5nIGNvc3RzIGFyZSBtYW5hZ2VhYmxlIGZvciBidXNpbmVzc2VzLicKICAgICAgICBlbHNlOgogICAgICAgICAgICByYXRlX21lYW5pbmcgPSAnQm9ycm93aW5nIGlzIGNoZWFwLiBMb3cgcmF0ZXMgdGVuZCB0byBwdXNoIGludmVzdG9ycyB0b3dhcmQgc3RvY2tzLicKICAgICAgICBjYXJkcy5hcHBlbmQoa3BpX2NhcmQoJ0ZlZCBJbnRlcmVzdCBSYXRlJywgZid7ZmVkX3JhdGU6LjJmfSUnLCByYXRlX21lYW5pbmcsIENbJ2FjY2VudCddKSkKCiAgICAjIEluZmxhdGlvbgogICAgaWYgaW5mbGF0aW9uIGlzIG5vdCBOb25lOgogICAgICAgIGlmIGluZmxhdGlvbiA+IDQ6CiAgICAgICAgICAgIGluZmxfY29sb3IgPSBDWyduZWdhdGl2ZSddCiAgICAgICAgICAgIGluZmxfbWVhbmluZyA9ICdJbmZsYXRpb24gaXMgaGlnaCDigJQgcHJpY2VzIHJpc2luZyBmYXN0LiBUaGUgRmVkIHdpbGwgbGlrZWx5IGtlZXAgcmF0ZXMgaGlnaCB0byBmaWdodCB0aGlzLicKICAgICAgICBlbGlmIGluZmxhdGlvbiA+IDIuNToKICAgICAgICAgICAgaW5mbF9jb2xvciA9IENbJ3dhcm5pbmcnXQogICAgICAgICAgICBpbmZsX21lYW5pbmcgPSAnSW5mbGF0aW9uIGlzIGFib3ZlIHRoZSAyJSB0YXJnZXQuIFRoZSBGZWQgaXMgd2F0Y2hpbmcgdGhpcyBjbG9zZWx5LicKICAgICAgICBlbHNlOgogICAgICAgICAgICBpbmZsX2NvbG9yID0gQ1sncG9zaXRpdmUnXQogICAgICAgICAgICBpbmZsX21lYW5pbmcgPSAnSW5mbGF0aW9uIGlzIG5lYXIgdGhlIEZlZFwncyAyJSB0YXJnZXQuIFRoaXMgaXMgaGVhbHRoeSBmb3IgdGhlIGVjb25vbXkuJwogICAgICAgIGNhcmRzLmFwcGVuZChrcGlfY2FyZCgnSW5mbGF0aW9uIFJhdGUnLCBmJ3tpbmZsYXRpb246LjFmfSUnLCBpbmZsX21lYW5pbmcsIGluZmxfY29sb3IpKQoKICAgICMgWWllbGQgQ3VydmUKICAgIGlmIHNwcmVhZF92YWwgaXMgbm90IE5vbmU6CiAgICAgICAgaWYgc3ByZWFkX3ZhbCA8IDA6CiAgICAgICAgICAgIHNwcmVhZF9jb2xvciA9IENbJ25lZ2F0aXZlJ10KICAgICAgICAgICAgc3ByZWFkX21lYW5pbmcgPSAnVGhlIHlpZWxkIGN1cnZlIGlzIElOVkVSVEVEIOKAlCBoaXN0b3JpY2FsbHkgYSB3YXJuaW5nIHNpZ24gdGhhdCBhIHJlY2Vzc2lvbiBtYXkgYmUgY29taW5nLicKICAgICAgICBlbHNlOgogICAgICAgICAgICBzcHJlYWRfY29sb3IgPSBDWydwb3NpdGl2ZSddCiAgICAgICAgICAgIHNwcmVhZF9tZWFuaW5nID0gJ1RoZSB5aWVsZCBjdXJ2ZSBpcyBub3JtYWwg4oCUIGxvbmctdGVybSBib25kcyBwYXkgbW9yZSB0aGFuIHNob3J0LXRlcm0sIHdoaWNoIGlzIGhlYWx0aHkuJwogICAgICAgIGNhcmRzLmFwcGVuZChrcGlfY2FyZCgnWWllbGQgQ3VydmUgKDEwWeKIkjJZKScsIGYne3NwcmVhZF92YWw6Ky4yZn0lJywgc3ByZWFkX21lYW5pbmcsIHNwcmVhZF9jb2xvcikpCgogICAgIyBVbmVtcGxveW1lbnQKICAgIGlmIHVuZW1wIGlzIG5vdCBOb25lOgogICAgICAgIGlmIHVuZW1wIDwgNDoKICAgICAgICAgICAgdW5lbXBfY29sb3IgPSBDWydwb3NpdGl2ZSddCiAgICAgICAgICAgIHVuZW1wX21lYW5pbmcgPSAnVmVyeSBsb3cgdW5lbXBsb3ltZW50IOKAlCBtb3N0IHBlb3BsZSB3aG8gd2FudCBqb2JzIGhhdmUgdGhlbS4gR29vZCBmb3IgY29uc3VtZXIgc3BlbmRpbmcuJwogICAgICAgIGVsaWYgdW5lbXAgPCA2OgogICAgICAgICAgICB1bmVtcF9jb2xvciA9IENbJ3RleHQnXQogICAgICAgICAgICB1bmVtcF9tZWFuaW5nID0gJ1VuZW1wbG95bWVudCBpcyBtb2RlcmF0ZS4gVGhlIGpvYiBtYXJrZXQgaXMgT0sgYnV0IG5vdCBib29taW5nLicKICAgICAgICBlbHNlOgogICAgICAgICAgICB1bmVtcF9jb2xvciA9IENbJ25lZ2F0aXZlJ10KICAgICAgICAgICAgdW5lbXBfbWVhbmluZyA9ICdIaWdoIHVuZW1wbG95bWVudCDigJQgbWFueSBwZW9wbGUgYXJlIG91dCBvZiB3b3JrLCB3aGljaCBodXJ0cyBjb25zdW1lciBzcGVuZGluZyBhbmQgc3RvY2tzLicKICAgICAgICBjYXJkcy5hcHBlbmQoa3BpX2NhcmQoJ1VuZW1wbG95bWVudCcsIGYne3VuZW1wOi4xZn0lJywgdW5lbXBfbWVhbmluZywgdW5lbXBfY29sb3IpKQoKICAgIHJldHVybiBkYmMuUm93KGNhcmRzKQoKCiMg4pSA4pSAIFJlY2Vzc2lvbiByaXNrIHBhbmVsIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAoKU0lHTkFMX0VYUExBTkFUSU9OUyA9IHsKICAgICdDVVJWRSBJTlYnOiAnWWllbGQgY3VydmUgaW52ZXJ0ZWQg4oCUIHNob3J0LXRlcm0gcmF0ZXMgaGlnaGVyIHRoYW4gbG9uZy10ZXJtLiBIYXBwZW5lZCBiZWZvcmUgbW9zdCByZWNlc3Npb25zLicsCiAgICAnRkZSPjEwWSc6ICAgJ1RoZSBGZWRcJ3MgcmF0ZSBpcyBhYm92ZSB0aGUgMTAteWVhciBUcmVhc3VyeSByYXRlIOKAlCBhbm90aGVyIHNpZ24gcG9saWN5IG1heSBiZSB0b28gdGlnaHQuJywKICAgICdWSVg+MzAnOiAgICAnRmVhciBpbmRleCBhYm92ZSAzMCDigJQgbWFya2V0cyBhcmUgaW4gb3IgbmVhciBwYW5pYyB0ZXJyaXRvcnkuJywKICAgICdIWT41MDBicCc6ICAnSnVuayBib25kIHNwcmVhZHMgYXJlIHdpZGUg4oCUIGNvbXBhbmllcyB3aXRoIHdlYWsgY3JlZGl0IGFyZSBzdHJ1Z2dsaW5nIHRvIGJvcnJvdy4nLAogICAgJ1VORU1Q4oaRJzogICAgJ1VuZW1wbG95bWVudCBoYXMgYmVlbiByaXNpbmcgb3ZlciB0aGUgcGFzdCAzIG1vbnRocy4nLAogICAgJ1NFTlQ8NjAnOiAgICdDb25zdW1lciBjb25maWRlbmNlIGlzIHZlcnkgbG93IOKAlCBwZW9wbGUgZmVlbCBwZXNzaW1pc3RpYyBhYm91dCB0aGUgZWNvbm9teS4nLAp9CgpkZWYgYnVpbGRfcmVjZXNzaW9uX3BhbmVsKHNjb3JlX2RhdGE6IGRpY3QpIC0+IGh0bWwuRGl2OgogICAgc2NvcmUgICA9IHNjb3JlX2RhdGEuZ2V0KCdzY29yZScsIDApCiAgICBzaWduYWxzID0gc2NvcmVfZGF0YS5nZXQoJ3NpZ25hbHMnLCBbXSkKCiAgICBpZiBzY29yZSA+PSA2MDoKICAgICAgICBjb2xvciA9IENbJ25lZ2F0aXZlJ10KICAgICAgICB2ZXJkaWN0ID0gJ0hpZ2ggcmVjZXNzaW9uIHJpc2snCiAgICAgICAgc3VtbWFyeSA9ICdNdWx0aXBsZSB3YXJuaW5nIHNpZ25zIGFyZSBmbGFzaGluZy4gVGhpcyBkb2VzIG5vdCBtZWFuIGEgcmVjZXNzaW9uIGlzIGNlcnRhaW4sIGJ1dCB0aGUgb2RkcyBhcmUgZWxldmF0ZWQuJwogICAgZWxpZiBzY29yZSA+PSAzNToKICAgICAgICBjb2xvciA9IENbJ3dhcm5pbmcnXQogICAgICAgIHZlcmRpY3QgPSAnU29tZSB3YXJuaW5nIHNpZ25zJwogICAgICAgIHN1bW1hcnkgPSAnQSBmZXcgaW5kaWNhdG9ycyBhcmUgY29uY2VybmluZy4gV29ydGggd2F0Y2hpbmcsIGJ1dCBub3QgYSBjcmlzaXMgc2lnbmFsIHlldC4nCiAgICBlbHNlOgogICAgICAgIGNvbG9yID0gQ1sncG9zaXRpdmUnXQogICAgICAgIHZlcmRpY3QgPSAnTG93IHJlY2Vzc2lvbiByaXNrJwogICAgICAgIHN1bW1hcnkgPSAnTW9zdCBpbmRpY2F0b3JzIGxvb2sgaGVhbHRoeS4gVGhlIGVjb25vbXkgYXBwZWFycyB0byBiZSBvbiBzb2xpZCBmb290aW5nLicKCiAgICBzaWduYWxfcGlsbHMgPSBbXQogICAgZm9yIHNpZyBpbiBzaWduYWxzOgogICAgICAgIG5hbWUgPSBzaWdbJ25hbWUnXQogICAgICAgIHRyaWdnZXJlZCA9IHNpZy5nZXQoJ3RyaWdnZXJlZCcsIEZhbHNlKQogICAgICAgIHBpbGxfY29sb3IgPSBDWyduZWdhdGl2ZSddIGlmIHRyaWdnZXJlZCBlbHNlIENbJ211dGVkJ10KICAgICAgICBleHBsYW5hdGlvbiA9IFNJR05BTF9FWFBMQU5BVElPTlMuZ2V0KG5hbWUsIG5hbWUpCiAgICAgICAgc2lnbmFsX3BpbGxzLmFwcGVuZCgKICAgICAgICAgICAgaHRtbC5TcGFuKG5hbWUsIHRpdGxlPWV4cGxhbmF0aW9uLCBzdHlsZT17CiAgICAgICAgICAgICAgICAnYmFja2dyb3VuZENvbG9yJzogZid7cGlsbF9jb2xvcn0yMicsCiAgICAgICAgICAgICAgICAnYm9yZGVyJzogZicxcHggc29saWQge3BpbGxfY29sb3J9NTUnLAogICAgICAgICAgICAgICAgJ2NvbG9yJzogcGlsbF9jb2xvciwKICAgICAgICAgICAgICAgICdmb250U2l6ZSc6ICcxMXB4JywgJ2ZvbnRXZWlnaHQnOiAnNjAwJywKICAgICAgICAgICAgICAgICdib3JkZXJSYWRpdXMnOiAnNHB4JywgJ3BhZGRpbmcnOiAnM3B4IDlweCcsCiAgICAgICAgICAgICAgICAnbWFyZ2luUmlnaHQnOiAnNnB4JywgJ21hcmdpbkJvdHRvbSc6ICc2cHgnLAogICAgICAgICAgICAgICAgJ2Rpc3BsYXknOiAnaW5saW5lLWJsb2NrJywgJ2N1cnNvcic6ICdoZWxwJywKICAgICAgICAgICAgfSkKICAgICAgICApCgogICAgcmV0dXJuIGh0bWwuRGl2KFsKICAgICAgICBkYmMuUm93KFsKICAgICAgICAgICAgZGJjLkNvbChbCiAgICAgICAgICAgICAgICBodG1sLkRpdihzdHIoc2NvcmUpLCBzdHlsZT17CiAgICAgICAgICAgICAgICAgICAgJ2NvbG9yJzogY29sb3IsICdmb250U2l6ZSc6ICc1NnB4JywKICAgICAgICAgICAgICAgICAgICAnZm9udFdlaWdodCc6ICc4MDAnLCAnZm9udEZhbWlseSc6ICdtb25vc3BhY2UnLCAnbGluZUhlaWdodCc6ICcxJywKICAgICAgICAgICAgICAgIH0pLAogICAgICAgICAgICAgICAgaHRtbC5EaXYoJ291dCBvZiAxMDAnLCBzdHlsZT17CiAgICAgICAgICAgICAgICAgICAgJ2NvbG9yJzogQ1snbXV0ZWQnXSwgJ2ZvbnRTaXplJzogJzEycHgnLCAnbWFyZ2luVG9wJzogJzRweCcsCiAgICAgICAgICAgICAgICB9KSwKICAgICAgICAgICAgICAgIGh0bWwuRGl2KHZlcmRpY3QsIHN0eWxlPXsKICAgICAgICAgICAgICAgICAgICAnY29sb3InOiBjb2xvciwgJ2ZvbnRTaXplJzogJzEzcHgnLAogICAgICAgICAgICAgICAgICAgICdmb250V2VpZ2h0JzogJzcwMCcsICdtYXJnaW5Ub3AnOiAnOHB4JywKICAgICAgICAgICAgICAgIH0pLAogICAgICAgICAgICBdLCB4cz0xMiwgbWQ9MiwgY2xhc3NOYW1lPSdtYi0zIG1iLW1kLTAnKSwKICAgICAgICAgICAgZGJjLkNvbChbCiAgICAgICAgICAgICAgICBodG1sLlAoc3VtbWFyeSwgc3R5bGU9ewogICAgICAgICAgICAgICAgICAgICdjb2xvcic6IENbJ3RleHQnXSwgJ2ZvbnRTaXplJzogJzEzcHgnLAogICAgICAgICAgICAgICAgICAgICdsaW5lSGVpZ2h0JzogJzEuNycsICdtYXJnaW5Cb3R0b20nOiAnMTJweCcsCiAgICAgICAgICAgICAgICB9KSwKICAgICAgICAgICAgICAgIGh0bWwuRGl2KCdTaWduYWxzIGJlaW5nIHRyYWNrZWQgKHJlZCA9IHRyaWdnZXJlZCwgZ3JheSA9IE9LKTonLCBzdHlsZT17CiAgICAgICAgICAgICAgICAgICAgJ2NvbG9yJzogQ1snbXV0ZWQnXSwgJ2ZvbnRTaXplJzogJzExcHgnLCAnbWFyZ2luQm90dG9tJzogJzhweCcsCiAgICAgICAgICAgICAgICB9KSwKICAgICAgICAgICAgICAgIGh0bWwuRGl2KHNpZ25hbF9waWxscywgc3R5bGU9eydkaXNwbGF5JzogJ2ZsZXgnLCAnZmxleFdyYXAnOiAnd3JhcCd9KSwKICAgICAgICAgICAgICAgIGh0bWwuRGl2KCdIb3ZlciBvdmVyIGVhY2ggc2lnbmFsIHRvIHNlZSB3aGF0IGl0IG1lYW5zLicsIHN0eWxlPXsKICAgICAgICAgICAgICAgICAgICAnY29sb3InOiBDWydtdXRlZCddLCAnZm9udFNpemUnOiAnMTFweCcsICdtYXJnaW5Ub3AnOiAnNnB4JywKICAgICAgICAgICAgICAgICAgICAnZm9udFN0eWxlJzogJ2l0YWxpYycsCiAgICAgICAgICAgICAgICB9KSwKICAgICAgICAgICAgXSwgeHM9MTIsIG1kPTEwKSwKICAgICAgICBdKSwKICAgIF0sIHN0eWxlPXsqKkNBUkQsICdib3JkZXJMZWZ0JzogZiczcHggc29saWQge2NvbG9yfSd9KQoKCiMg4pSA4pSAIE1hcmtldCBicmllZmluZyAocGxhaW4tRW5nbGlzaCBzdW1tYXJ5KSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCmRlZiBidWlsZF9tYXJrZXRfYnJpZWZpbmcoZnJlZF9kZiwgc3ByZWFkLCBzcHlfcmV0dXJuKSAtPiBodG1sLkRpdjoKICAgIGJ1bGxldHMgPSBbXQoKICAgIHRyeToKICAgICAgICBmZWQgPSBmcmVkX2RmWydGZWRlcmFsIEZ1bmRzIFJhdGUnXS5kcm9wbmEoKS5pbG9jWy0xXQogICAgICAgIGluZmwgPSBmcmVkX2RmWydDUEkgSW5mbGF0aW9uIChUcmltbWVkIE1lYW4pJ10uZHJvcG5hKCkuaWxvY1stMV0KICAgICAgICByZWFsID0gZmVkIC0gaW5mbAogICAgICAgIGlmIHJlYWwgPiAxLjU6CiAgICAgICAgICAgIGJ1bGxldHMuYXBwZW5kKCgn8J+PpicsICdGZWQgUG9saWN5JywgZidUaGUgRmVkXCdzIGludGVyZXN0IHJhdGUgKHtmZWQ6LjJmfSUpIGlzIHNpZ25pZmljYW50bHkgaGlnaGVyIHRoYW4gaW5mbGF0aW9uICh7aW5mbDouMWZ9JSkuIFRoaXMgaXMgY2FsbGVkIGEgInJlc3RyaWN0aXZlIiBwb2xpY3kg4oCUIGl0IG1ha2VzIGJvcnJvd2luZyBleHBlbnNpdmUgdG8gc2xvdyBkb3duIHRoZSBlY29ub215IGFuZCBjb29sIGluZmxhdGlvbi4nKSkKICAgICAgICBlbGlmIHJlYWwgPiAwOgogICAgICAgICAgICBidWxsZXRzLmFwcGVuZCgoJ/Cfj6YnLCAnRmVkIFBvbGljeScsIGYnVGhlIEZlZFwncyByYXRlICh7ZmVkOi4yZn0lKSBpcyBzbGlnaHRseSBhYm92ZSBpbmZsYXRpb24gKHtpbmZsOi4xZn0lKS4gUG9saWN5IGlzIG1pbGRseSB0aWdodCDigJQgdGhlIEZlZCBpcyBrZWVwaW5nIGEgbGlkIG9uIHRoaW5ncyB3aXRob3V0IHNsYW1taW5nIHRoZSBicmFrZXMuJykpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgYnVsbGV0cy5hcHBlbmQoKCfwn4+mJywgJ0ZlZCBQb2xpY3knLCBmJ1RoZSBGZWRcJ3MgcmF0ZSAoe2ZlZDouMmZ9JSkgaXMgYmVsb3cgaW5mbGF0aW9uICh7aW5mbDouMWZ9JSkuIFRoaXMgaXMgY2FsbGVkICJsb29zZSIgcG9saWN5IOKAlCBjaGVhcCBtb25leSBlbmNvdXJhZ2VzIGJvcnJvd2luZyBhbmQgaW52ZXN0aW5nLCB3aGljaCBjYW4gYm9vc3Qgc3RvY2tzLicpKQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBwYXNzCgogICAgdHJ5OgogICAgICAgIHNwID0gc3ByZWFkLmRyb3BuYSgpLmlsb2NbLTFdCiAgICAgICAgaWYgc3AgPCAwOgogICAgICAgICAgICBidWxsZXRzLmFwcGVuZCgoJ/Cfk4knLCAnWWllbGQgQ3VydmUnLCBmJ1RoZSB5aWVsZCBjdXJ2ZSBpcyBpbnZlcnRlZCAoMTBZ4oiSMlkgPSB7c3A6Ky4yZn0lKS4gTm9ybWFsbHksIGxvbmctdGVybSBib25kcyBwYXkgbW9yZSBpbnRlcmVzdCB0aGFuIHNob3J0LXRlcm0gb25lcy4gV2hlbiB0aGF0IGZsaXBzLCBpdCBvZnRlbiBzaWduYWxzIGludmVzdG9ycyBleHBlY3QgdGhlIGVjb25vbXkgdG8gc2xvdy4gVGhpcyBoYXMgcHJlY2VkZWQgbW9zdCBVUyByZWNlc3Npb25zLicpKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIGJ1bGxldHMuYXBwZW5kKCgn8J+TiCcsICdZaWVsZCBDdXJ2ZScsIGYnVGhlIHlpZWxkIGN1cnZlIGlzIG5vcm1hbCAoMTBZ4oiSMlkgPSB7c3A6Ky4yZn0lKS4gTG9uZy10ZXJtIGJvbmRzIHBheSBtb3JlIHRoYW4gc2hvcnQtdGVybSBvbmVzIOKAlCBpbnZlc3RvcnMgZXhwZWN0IHN0ZWFkeSBncm93dGggYWhlYWQuJykpCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIHBhc3MKCiAgICB0cnk6CiAgICAgICAgdml4ID0gZnJlZF9kZlsnVklYJ10uZHJvcG5hKCkuaWxvY1stMV0KICAgICAgICBoeSAgPSBmcmVkX2RmWydIaWdoIFlpZWxkIFNwcmVhZCddLmRyb3BuYSgpLmlsb2NbLTFdCiAgICAgICAgaWYgdml4ID49IDMwIG9yIGh5ID49IDUwMDoKICAgICAgICAgICAgYnVsbGV0cy5hcHBlbmQoKCfimqEnLCAnTWFya2V0IFN0cmVzcycsIGYnU3RyZXNzIGluZGljYXRvcnMgYXJlIGVsZXZhdGVkOiBWSVggYXQge3ZpeDouMWZ9IChmZWFyIGluZGV4KSBhbmQgaGlnaC15aWVsZCBib25kIHNwcmVhZHMgYXQge2h5Oi4wZn1icC4gVGhpcyBtZWFucyBpbnZlc3RvcnMgYXJlIG5lcnZvdXMgYW5kIHJpc2tpZXIgY29tcGFuaWVzIGFyZSBwYXlpbmcgYSBsb3QgbW9yZSB0byBib3Jyb3cgbW9uZXkuJykpCiAgICAgICAgZWxpZiB2aXggPj0gMjA6CiAgICAgICAgICAgIGJ1bGxldHMuYXBwZW5kKCgn8J+foScsICdNYXJrZXQgU3RyZXNzJywgZidNYXJrZXRzIGFyZSBhIGJpdCBhbnhpb3VzOiBWSVggYXQge3ZpeDouMWZ9LiBTb21lIHVuY2VydGFpbnR5IGJ1dCBub3RoaW5nIGV4dHJlbWUuIEhpZ2gteWllbGQgc3ByZWFkcyBhdCB7aHk6LjBmfWJwIGFyZSBub3JtYWwuJykpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgYnVsbGV0cy5hcHBlbmQoKCfinIUnLCAnTWFya2V0IFN0cmVzcycsIGYnTWFya2V0cyBhcmUgY2FsbTogVklYIGF0IHt2aXg6LjFmfSBhbmQgY3JlZGl0IHNwcmVhZHMgYXQge2h5Oi4wZn1icC4gSW52ZXN0b3JzIGFyZSBub3QgcGFydGljdWxhcmx5IHdvcnJpZWQgcmlnaHQgbm93LicpKQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBwYXNzCgogICAgdHJ5OgogICAgICAgIGluZmwgPSBmcmVkX2RmWydDUEkgSW5mbGF0aW9uIChUcmltbWVkIE1lYW4pJ10uZHJvcG5hKCkuaWxvY1stMV0KICAgICAgICBpZiBpbmZsID4gNDoKICAgICAgICAgICAgYnVsbGV0cy5hcHBlbmQoKCfwn5K4JywgJ0luZmxhdGlvbicsIGYnSW5mbGF0aW9uIGlzIHJ1bm5pbmcgaG90IGF0IHtpbmZsOi4xZn0lLiBXaGVuIHByaWNlcyByaXNlIHRoaXMgZmFzdCwgdGhlIEZlZCByYWlzZXMgcmF0ZXMgdG8gc2xvdyB0aGluZ3MgZG93biDigJQgYW5kIGhpZ2hlciByYXRlcyB0ZW5kIHRvIHB1c2ggc3RvY2sgcHJpY2VzIGxvd2VyLicpKQogICAgICAgIGVsaWYgaW5mbCA+IDI6CiAgICAgICAgICAgIGJ1bGxldHMuYXBwZW5kKCgn8J+SuCcsICdJbmZsYXRpb24nLCBmJ0luZmxhdGlvbiBpcyB7aW5mbDouMWZ9JSwgYWJvdmUgdGhlIEZlZFwncyAyJSB0YXJnZXQgYnV0IG1hbmFnZWFibGUuIFRoZSBGZWQgbWF5IGtlZXAgcmF0ZXMgZWxldmF0ZWQgdW50aWwgdGhpcyBjb21lcyBkb3duLicpKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIGJ1bGxldHMuYXBwZW5kKCgn8J+SuCcsICdJbmZsYXRpb24nLCBmJ0luZmxhdGlvbiBpcyB7aW5mbDouMWZ9JSDigJQgbmVhciBvciBiZWxvdyB0aGUgRmVkXCdzIDIlIHRhcmdldC4gVGhpcyBpcyBnb29kOiBpdCBtZWFucyB0aGUgRmVkIGhhcyBsZXNzIHJlYXNvbiB0byByYWlzZSByYXRlcywgd2hpY2ggaXMgcG9zaXRpdmUgZm9yIHN0b2Nrcy4nKSkKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgcGFzcwoKICAgIGl0ZW1zID0gW10KICAgIGZvciBpY29uLCB0aGVtZSwgdGV4dCBpbiBidWxsZXRzOgogICAgICAgIGl0ZW1zLmFwcGVuZCgKICAgICAgICAgICAgZGJjLkNvbChodG1sLkRpdihbCiAgICAgICAgICAgICAgICBodG1sLkRpdihmJ3tpY29ufSAge3RoZW1lLnVwcGVyKCl9Jywgc3R5bGU9ewogICAgICAgICAgICAgICAgICAgICdjb2xvcic6IENbJ3N1YnRleHQnXSwgJ2ZvbnRTaXplJzogJzEwcHgnLAogICAgICAgICAgICAgICAgICAgICdmb250V2VpZ2h0JzogJzcwMCcsICdsZXR0ZXJTcGFjaW5nJzogJzAuMDhlbScsCiAgICAgICAgICAgICAgICAgICAgJ21hcmdpbkJvdHRvbSc6ICc4cHgnLAogICAgICAgICAgICAgICAgfSksCiAgICAgICAgICAgICAgICBodG1sLlAodGV4dCwgc3R5bGU9ewogICAgICAgICAgICAgICAgICAgICdjb2xvcic6IENbJ3RleHQnXSwgJ2ZvbnRTaXplJzogJzEzcHgnLAogICAgICAgICAgICAgICAgICAgICdsaW5lSGVpZ2h0JzogJzEuNycsICdtYXJnaW4nOiAnMCcsCiAgICAgICAgICAgICAgICB9KSwKICAgICAgICAgICAgXSwgc3R5bGU9eyoqQ0FSRCwgJ2hlaWdodCc6ICcxMDAlJ30pLAogICAgICAgICAgICB4cz0xMiwgbWQ9NiwgY2xhc3NOYW1lPSdtYi0zJykKICAgICAgICApCgogICAgcmV0dXJuIGRiYy5Sb3coaXRlbXMpCgoKIyDilIDilIAgU2VjdG9yIHBhbmVsIHdpdGggcmVhbCBuYW1lcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKClNFQ1RPUl9OQU1FUyA9IHsKICAgICdYTEsnOiAgJ1RlY2hub2xvZ3knLAogICAgJ1hMRic6ICAnRmluYW5jZSAmIEJhbmtzJywKICAgICdYTEUnOiAgJ0VuZXJneSAmIE9pbCcsCiAgICAnWExWJzogICdIZWFsdGhjYXJlJywKICAgICdYTEknOiAgJ0luZHVzdHJpYWxzJywKICAgICdYTEMnOiAgJ0NvbW11bmljYXRpb24nLAogICAgJ1hMWSc6ICAnQ29uc3VtZXIgKERpc2NyZXRpb25hcnkpJywKICAgICdYTFAnOiAgJ0NvbnN1bWVyIChTdGFwbGVzKScsCiAgICAnWExVJzogICdVdGlsaXRpZXMnLAogICAgJ1hMUkUnOiAnUmVhbCBFc3RhdGUnLAogICAgJ1hMQic6ICAnTWF0ZXJpYWxzJywKICAgICdTUFknOiAgJ1MmUCA1MDAgKFRvdGFsIE1hcmtldCknLAogICAgJ1FRUSc6ICAnTmFzZGFxIDEwMCAoVGVjaC1IZWF2eSknLAogICAgJ0RJQSc6ICAnRG93IEpvbmVzIDMwJywKICAgICdJV00nOiAgJ1NtYWxsIENhcCBTdG9ja3MnLAp9CgpTRUNUT1JfRVhQTEFJTkVSUyA9IHsKICAgICdYTEsnOiAgJ1RlY2hub2xvZ3kgY29tcGFuaWVzIChBcHBsZSwgTWljcm9zb2Z0LCBOdmlkaWEpLiBTZW5zaXRpdmUgdG8gaW50ZXJlc3QgcmF0ZXMg4oCUIGhpZ2ggcmF0ZXMgaHVydCBiZWNhdXNlIGZ1dHVyZSBwcm9maXRzIGFyZSB3b3J0aCBsZXNzIHRvZGF5LicsCiAgICAnWExGJzogICdCYW5rcyBhbmQgZmluYW5jaWFsIGNvbXBhbmllcy4gUHJvZml0IGZyb20gaGlnaGVyIGludGVyZXN0IHJhdGVzLiBEb2VzIHdlbGwgd2hlbiB0aGUgZWNvbm9teSBpcyBncm93aW5nLicsCiAgICAnWExFJzogICdPaWwgYW5kIGdhcyBjb21wYW5pZXMuIE1vdmVzIHdpdGggb2lsIHByaWNlcywgd2hpY2ggZGVwZW5kIG9uIGdsb2JhbCBzdXBwbHkgYW5kIGRlbWFuZC4nLAogICAgJ1hMVic6ICAnSG9zcGl0YWxzLCBkcnVnbWFrZXJzLCBpbnN1cmFuY2UuIFRlbmRzIHRvIGhvbGQgdXAgd2VsbCBkdXJpbmcgcmVjZXNzaW9ucyDigJQgcGVvcGxlIHN0aWxsIG5lZWQgaGVhbHRoY2FyZS4nLAogICAgJ1hMSSc6ICAnRmFjdG9yaWVzLCBjb25zdHJ1Y3Rpb24sIHRyYW5zcG9ydGF0aW9uLiBUaWVkIHRvIGVjb25vbWljIGdyb3d0aCDigJQgZG9lcyB3ZWxsIGluIGV4cGFuc2lvbnMuJywKICAgICdYTEMnOiAgJ0dvb2dsZSwgTWV0YSwgTmV0ZmxpeC4gTWl4IG9mIHRlY2gtbGlrZSBncm93dGggY29tcGFuaWVzIGFuZCBvbGQtc2Nob29sIG1lZGlhLicsCiAgICAnWExZJzogICdBbWF6b24sIFRlc2xhLCByZXN0YXVyYW50cywgaG90ZWxzLiBQZW9wbGUgYnV5IGRpc2NyZXRpb25hcnkgaXRlbXMgd2hlbiBjb25maWRlbnQg4oCUIHNlbnNpdGl2ZSB0byByZWNlc3Npb25zLicsCiAgICAnWExQJzogICdXYWxtYXJ0LCBQcm9jdGVyICYgR2FtYmxlLCBmb29kIGNvbXBhbmllcy4gRGVmZW5zaXZlIOKAlCBwZW9wbGUgYnV5IGJhc2ljcyByZWdhcmRsZXNzIG9mIHRoZSBlY29ub215LicsCiAgICAnWExVJzogICdFbGVjdHJpYyBhbmQgZ2FzIHV0aWxpdGllcy4gU2xvdy1ncm93aW5nIGJ1dCBwYXkgZGl2aWRlbmRzLiBIdXJ0IGJ5IGhpZ2hlciBpbnRlcmVzdCByYXRlcy4nLAogICAgJ1hMUkUnOiAnUkVJVHMg4oCUIGNvbXBhbmllcyB0aGF0IG93biBwcm9wZXJ0eS4gVmVyeSBzZW5zaXRpdmUgdG8gaW50ZXJlc3QgcmF0ZXMuIEZhbGxzIHdoZW4gcmF0ZXMgcmlzZS4nLAogICAgJ1hMQic6ICAnU3RlZWwsIGNoZW1pY2FscywgbWluaW5nLiBNb3ZlcyB3aXRoIGdsb2JhbCBlY29ub21pYyBhY3Rpdml0eSBhbmQgY29tbW9kaXR5IHByaWNlcy4nLAp9CgoKIyDilIDilIAgTmV3cyBwYW5lbCDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCmRlZiBidWlsZF9uZXdzX3BhbmVsKGFydGljbGVzOiBsaXN0KSAtPiBodG1sLkRpdjoKICAgIGlmIG5vdCBhcnRpY2xlczoKICAgICAgICByZXR1cm4gaHRtbC5EaXYoCiAgICAgICAgICAgICdObyBuZXdzIGF2YWlsYWJsZSByaWdodCBub3cuJywKICAgICAgICAgICAgc3R5bGU9eydjb2xvcic6IENbJ3N1YnRleHQnXSwgJ2ZvbnRTaXplJzogJzEzcHgnLCAncGFkZGluZyc6ICcxMnB4J30KICAgICAgICApCgogICAgcm93cyA9IFtdCiAgICBmb3IgaSwgYXJ0IGluIGVudW1lcmF0ZShhcnRpY2xlc1s6MTBdKToKICAgICAgICBoZWFkbGluZSA9IGFydC5nZXQoJ2hlYWRsaW5lJywgYXJ0LmdldCgndGl0bGUnLCAnVW50aXRsZWQnKSkKICAgICAgICB1cmwgICAgICA9IGFydC5nZXQoJ3VybCcsICcjJykKICAgICAgICBzb3VyY2UgICA9IGFydC5nZXQoJ3NvdXJjZScsICcnKQogICAgICAgIGNyZWF0ZWQgID0gYXJ0LmdldCgnY3JlYXRlZCcsIGFydC5nZXQoJ2RhdGV0aW1lJywgJycpKQogICAgICAgIHRyeToKICAgICAgICAgICAgdHMgPSBkYXRldGltZS51dGNmcm9tdGltZXN0YW1wKGludChjcmVhdGVkKSkuc3RyZnRpbWUoJyViICVkLCAlSDolTScpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgdHMgPSBzdHIoY3JlYXRlZClbOjEwXQoKICAgICAgICByb3dzLmFwcGVuZChodG1sLkRpdihbCiAgICAgICAgICAgIGh0bWwuRGl2KFsKICAgICAgICAgICAgICAgIGh0bWwuU3Bhbihzb3VyY2UudXBwZXIoKSwgc3R5bGU9ewogICAgICAgICAgICAgICAgICAgICdjb2xvcic6IENbJ2FjY2VudCddLCAnZm9udFNpemUnOiAnMTBweCcsCiAgICAgICAgICAgICAgICAgICAgJ2ZvbnRXZWlnaHQnOiAnNzAwJywgJ21hcmdpblJpZ2h0JzogJzhweCcsCiAgICAgICAgICAgICAgICB9KSwKICAgICAgICAgICAgICAgIGh0bWwuU3Bhbih0cywgc3R5bGU9eydjb2xvcic6IENbJ211dGVkJ10sICdmb250U2l6ZSc6ICcxMHB4J30pLAogICAgICAgICAgICBdLCBzdHlsZT17J21hcmdpbkJvdHRvbSc6ICczcHgnfSksCiAgICAgICAgICAgIGh0bWwuQShoZWFkbGluZSwgaHJlZj11cmwsIHRhcmdldD0nX2JsYW5rJywgc3R5bGU9ewogICAgICAgICAgICAgICAgJ2NvbG9yJzogQ1sndGV4dCddLCAnZm9udFNpemUnOiAnMTNweCcsCiAgICAgICAgICAgICAgICAndGV4dERlY29yYXRpb24nOiAnbm9uZScsICdsaW5lSGVpZ2h0JzogJzEuNScsCiAgICAgICAgICAgICAgICAnZGlzcGxheSc6ICdibG9jaycsCiAgICAgICAgICAgIH0pLAogICAgICAgICAgICBodG1sLkhyKHN0eWxlPXsKICAgICAgICAgICAgICAgICdib3JkZXJDb2xvcic6IENbJ2JvcmRlciddLCAnbWFyZ2luJzogJzEwcHggMCcsCiAgICAgICAgICAgICAgICAnb3BhY2l0eSc6ICcwLjYnLAogICAgICAgICAgICB9KSBpZiBpIDwgbGVuKGFydGljbGVzKSAtIDEgZWxzZSBOb25lLAogICAgICAgIF0pKQoKICAgIHJldHVybiBodG1sLkRpdihyb3dzLCBzdHlsZT1DQVJEKQoKCiMg4pSA4pSAIEZvb3RlciDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCmRlZiBidWlsZF9mb290ZXIoKSAtPiBodG1sLkRpdjoKICAgIHJldHVybiBodG1sLkRpdigKICAgICAgICBkYmMuQ29udGFpbmVyKAogICAgICAgICAgICBodG1sLlAoWwogICAgICAgICAgICAgICAgJ0RhdGEgc291cmNlczogJywKICAgICAgICAgICAgICAgIGh0bWwuQSgnRlJFRCAoRmVkZXJhbCBSZXNlcnZlKScsIGhyZWY9J2h0dHBzOi8vZnJlZC5zdGxvdWlzZmVkLm9yZycsIHRhcmdldD0nX2JsYW5rJywKICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT17J2NvbG9yJzogQ1snYWNjZW50J119KSwKICAgICAgICAgICAgICAgICcgwrcgJywKICAgICAgICAgICAgICAgIGh0bWwuQSgnWWFob28gRmluYW5jZScsIGhyZWY9J2h0dHBzOi8vZmluYW5jZS55YWhvby5jb20nLCB0YXJnZXQ9J19ibGFuaycsCiAgICAgICAgICAgICAgICAgICAgICAgc3R5bGU9eydjb2xvcic6IENbJ2FjY2VudCddfSksCiAgICAgICAgICAgICAgICAnIMK3ICcsCiAgICAgICAgICAgICAgICBodG1sLkEoJ0JlbnppbmdhIE5ld3MnLCBocmVmPSdodHRwczovL2JlbnppbmdhLmNvbScsIHRhcmdldD0nX2JsYW5rJywKICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT17J2NvbG9yJzogQ1snYWNjZW50J119KSwKICAgICAgICAgICAgICAgIGYnICDigKIgIEdlbmVyYXRlZCB7ZGF0ZXRpbWUubm93KHRpbWV6b25lLnV0Yykuc3RyZnRpbWUoIiVZLSVtLSVkICVIOiVNIFVUQyIpfScsCiAgICAgICAgICAgIF0sIHN0eWxlPXsnY29sb3InOiBDWydtdXRlZCddLCAnZm9udFNpemUnOiAnMTFweCcsICdtYXJnaW4nOiAnMCd9KSwKICAgICAgICAgICAgZmx1aWQ9VHJ1ZSwKICAgICAgICApLAogICAgICAgIHN0eWxlPXsKICAgICAgICAgICAgJ2JvcmRlclRvcCc6IGYiMXB4IHNvbGlkIHtDWydib3JkZXInXX0iLAogICAgICAgICAgICAncGFkZGluZyc6ICcxNnB4IDAnLCAnbWFyZ2luVG9wJzogJzQwcHgnLAogICAgICAgICAgICAnYmFja2dyb3VuZENvbG9yJzogQ1snc3VyZmFjZSddLAogICAgICAgIH0KICAgICkK
+"""
+layouts.py — Beginner-friendly learning dashboard components.
+
+Philosophy: Every number has a plain-English label explaining what it means.
+Every section has an expandable accordion explaining WHY it matters to stocks.
+No jargon. No acronyms without explanation. Cause-and-effect language throughout.
+"""
+
+from datetime import datetime, timezone
+import dash_bootstrap_components as dbc
+from dash import html
+
+# ── Colour palette (soft dark — readable, not intimidating) ──────────────────
+C = {
+    'bg':       '#111827',   # dark blue-gray
+    'surface':  '#1F2937',   # card background
+    'border':   '#374151',   # subtle border
+    'accent':   '#60A5FA',   # soft blue
+    'positive': '#34D399',   # green
+    'negative': '#F87171',   # red
+    'warning':  '#FBBF24',   # amber
+    'text':     '#F9FAFB',   # near-white
+    'subtext':  '#9CA3AF',   # gray
+    'muted':    '#6B7280',   # dark gray
+}
+
+CARD = {
+    'backgroundColor': C['surface'],
+    'border': f"1px solid {C['border']}",
+    'borderRadius': '8px',
+    'padding': '18px 22px',
+}
+
+
+# ── Header ───────────────────────────────────────────────────────────────────
+
+def build_header() -> html.Div:
+    return html.Div(
+        dbc.Container(
+            dbc.Row([
+                dbc.Col(html.Div([
+                    html.Span('📈', style={'fontSize': '18px', 'marginRight': '10px'}),
+                    html.Span('Stock Market Learning Dashboard', style={
+                        'color': C['text'], 'fontWeight': '700', 'fontSize': '15px',
+                    }),
+                ], style={'display': 'flex', 'alignItems': 'center'}), width='auto'),
+                dbc.Col(html.Span(
+                    'Updated every hour  •  All data from public sources',
+                    style={'color': C['subtext'], 'fontSize': '12px'}
+                ), className='d-flex align-items-center justify-content-end'),
+            ], align='center', className='py-3'),
+            fluid=True,
+        ),
+        style={
+            'backgroundColor': C['surface'],
+            'borderBottom': f"1px solid {C['border']}",
+        }
+    )
+
+
+# ── Section header with optional explainer accordion ─────────────────────────
+
+def section_header(title: str, explainer: str = '') -> html.Div:
+    """Bold section title + optional collapsible 'What does this mean?' box."""
+    children = [
+        html.H6(title, style={
+            'color': C['text'], 'fontWeight': '700',
+            'fontSize': '14px', 'marginBottom': '4px',
+        }),
+    ]
+    if explainer:
+        children.append(
+            dbc.Accordion([
+                dbc.AccordionItem(
+                    html.P(explainer, style={
+                        'color': C['subtext'], 'fontSize': '13px',
+                        'lineHeight': '1.7', 'margin': '0',
+                    }),
+                    title='What does this mean? ▾',
+                )
+            ], start_collapsed=True, flush=True, style={
+                'marginBottom': '8px',
+                '--bs-accordion-bg': C['surface'],
+                '--bs-accordion-border-color': C['border'],
+                '--bs-accordion-btn-color': C['accent'],
+                '--bs-accordion-btn-bg': C['surface'],
+                '--bs-accordion-active-bg': C['surface'],
+                '--bs-accordion-active-color': C['accent'],
+                '--bs-accordion-body-padding-x': '0',
+                '--bs-accordion-body-padding-y': '8px',
+                'fontSize': '12px',
+            })
+        )
+    children.append(html.Hr(style={
+        'borderColor': C['border'], 'marginTop': '6px',
+        'marginBottom': '16px', 'opacity': '1',
+    }))
+    return html.Div(children)
+
+
+# ── Plain-English KPI card ────────────────────────────────────────────────────
+
+def kpi_card(title: str, value: str, meaning: str, color: str = None) -> dbc.Col:
+    """
+    title:   Short label e.g. 'S&P 500 This Year'
+    value:   The number e.g. '+8.3%'
+    meaning: One plain-English sentence about what it means RIGHT NOW
+    color:   Override border/value color
+    """
+    val_color = color or C['text']
+    border_left = color or C['border']
+    return dbc.Col(
+        html.Div([
+            html.Div(title, style={
+                'color': C['subtext'], 'fontSize': '11px',
+                'fontWeight': '600', 'marginBottom': '8px',
+                'textTransform': 'uppercase', 'letterSpacing': '0.05em',
+            }),
+            html.Div(value, style={
+                'color': val_color, 'fontSize': '26px',
+                'fontWeight': '700', 'fontFamily': 'monospace',
+                'lineHeight': '1', 'marginBottom': '8px',
+            }),
+            html.Div(meaning, style={
+                'color': C['subtext'], 'fontSize': '12px',
+                'lineHeight': '1.5',
+            }),
+        ], style={**CARD, 'borderLeft': f'3px solid {border_left}'}),
+        xs=12, sm=6, md=4, lg=3, className='mb-3'
+    )
+
+
+# ── KPI row builder ───────────────────────────────────────────────────────────
+
+def build_kpi_row(fred_df, spread, spy_return) -> html.Div:
+    try:
+        inflation = fred_df['CPI Inflation (Trimmed Mean)'].dropna().iloc[-1]
+    except Exception:
+        inflation = None
+
+    try:
+        fed_rate = fred_df['Federal Funds Rate'].dropna().iloc[-1]
+    except Exception:
+        fed_rate = None
+
+    try:
+        vix = fred_df['VIX'].dropna().iloc[-1]
+    except Exception:
+        vix = None
+
+    try:
+        spread_val = spread.dropna().iloc[-1]
+    except Exception:
+        spread_val = None
+
+    try:
+        unemp = fred_df['Unemployment Rate'].dropna().iloc[-1]
+    except Exception:
+        unemp = None
+
+    try:
+        sentiment = fred_df['Consumer Sentiment'].dropna().iloc[-1]
+    except Exception:
+        sentiment = None
+
+    cards = []
+
+    # S&P 500
+    spy_color = C['positive'] if spy_return >= 0 else C['negative']
+    spy_meaning = (
+        'The broad US stock market is UP so far this year — investors are generally optimistic.'
+        if spy_return >= 0
+        else 'The broad US stock market is DOWN so far this year — investors are cautious or selling.'
+    )
+    cards.append(kpi_card('S&P 500 This Year', f'{spy_return:+.1f}%', spy_meaning, spy_color))
+
+    # VIX
+    if vix is not None:
+        if vix < 15:
+            vix_color = C['positive']
+            vix_meaning = 'Very calm markets. Investors are not worried about big swings.'
+        elif vix < 25:
+            vix_color = C['text']
+            vix_meaning = 'Normal level of uncertainty. Markets are moving but nothing alarming.'
+        elif vix < 35:
+            vix_color = C['warning']
+            vix_meaning = 'Elevated fear. Investors expect larger-than-normal price swings soon.'
+        else:
+            vix_color = C['negative']
+            vix_meaning = 'Panic mode. Markets are very uncertain — this level is rare and serious.'
+        cards.append(kpi_card('Fear Index (VIX)', f'{vix:.1f}', vix_meaning, vix_color))
+
+    # Fed Rate
+    if fed_rate is not None:
+        if fed_rate > 4:
+            rate_meaning = 'Borrowing is expensive. This slows spending and can pressure stocks.'
+        elif fed_rate > 2:
+            rate_meaning = 'Rates are moderate. Borrowing costs are manageable for businesses.'
+        else:
+            rate_meaning = 'Borrowing is cheap. Low rates tend to push investors toward stocks.'
+        cards.append(kpi_card('Fed Interest Rate', f'{fed_rate:.2f}%', rate_meaning, C['accent']))
+
+    # Inflation
+    if inflation is not None:
+        if inflation > 4:
+            infl_color = C['negative']
+            infl_meaning = 'Inflation is high — prices rising fast. The Fed will likely keep rates high to fight this.'
+        elif inflation > 2.5:
+            infl_color = C['warning']
+            infl_meaning = 'Inflation is above the 2% target. The Fed is watching this closely.'
+        else:
+            infl_color = C['positive']
+            infl_meaning = 'Inflation is near the Fed\'s 2% target. This is healthy for the economy.'
+        cards.append(kpi_card('Inflation Rate', f'{inflation:.1f}%', infl_meaning, infl_color))
+
+    # Yield Curve
+    if spread_val is not None:
+        if spread_val < 0:
+            spread_color = C['negative']
+            spread_meaning = 'The yield curve is INVERTED — historically a warning sign that a recession may be coming.'
+        else:
+            spread_color = C['positive']
+            spread_meaning = 'The yield curve is normal — long-term bonds pay more than short-term, which is healthy.'
+        cards.append(kpi_card('Yield Curve (10Y−2Y)', f'{spread_val:+.2f}%', spread_meaning, spread_color))
+
+    # Unemployment
+    if unemp is not None:
+        if unemp < 4:
+            unemp_color = C['positive']
+            unemp_meaning = 'Very low unemployment — most people who want jobs have them. Good for consumer spending.'
+        elif unemp < 6:
+            unemp_color = C['text']
+            unemp_meaning = 'Unemployment is moderate. The job market is OK but not booming.'
+        else:
+            unemp_color = C['negative']
+            unemp_meaning = 'High unemployment — many people are out of work, which hurts consumer spending and stocks.'
+        cards.append(kpi_card('Unemployment', f'{unemp:.1f}%', unemp_meaning, unemp_color))
+
+    return dbc.Row(cards)
+
+
+# ── Recession risk panel ──────────────────────────────────────────────────────
+
+SIGNAL_EXPLANATIONS = {
+    'CURVE INV': 'Yield curve inverted — short-term rates higher than long-term. Happened before most recessions.',
+    'FFR>10Y':   'The Fed\'s rate is above the 10-year Treasury rate — another sign policy may be too tight.',
+    'VIX>30':    'Fear index above 30 — markets are in or near panic territory.',
+    'HY>500bp':  'Junk bond spreads are wide — companies with weak credit are struggling to borrow.',
+    'UNEMP↑':    'Unemployment has been rising over the past 3 months.',
+    'SENT<60':   'Consumer confidence is very low — people feel pessimistic about the economy.',
+}
+
+def build_recession_panel(score_data: dict) -> html.Div:
+    score   = score_data.get('score', 0)
+    signals = score_data.get('signals', [])
+
+    if score >= 60:
+        color = C['negative']
+        verdict = 'High recession risk'
+        summary = 'Multiple warning signs are flashing. This does not mean a recession is certain, but the odds are elevated.'
+    elif score >= 35:
+        color = C['warning']
+        verdict = 'Some warning signs'
+        summary = 'A few indicators are concerning. Worth watching, but not a crisis signal yet.'
+    else:
+        color = C['positive']
+        verdict = 'Low recession risk'
+        summary = 'Most indicators look healthy. The economy appears to be on solid footing.'
+
+    signal_pills = []
+    for sig in signals:
+        name = sig['name']
+        triggered = sig.get('triggered', False)
+        pill_color = C['negative'] if triggered else C['muted']
+        explanation = SIGNAL_EXPLANATIONS.get(name, name)
+        signal_pills.append(
+            html.Span(name, title=explanation, style={
+                'backgroundColor': f'{pill_color}22',
+                'border': f'1px solid {pill_color}55',
+                'color': pill_color,
+                'fontSize': '11px', 'fontWeight': '600',
+                'borderRadius': '4px', 'padding': '3px 9px',
+                'marginRight': '6px', 'marginBottom': '6px',
+                'display': 'inline-block', 'cursor': 'help',
+            })
+        )
+
+    return html.Div([
+        dbc.Row([
+            dbc.Col([
+                html.Div(str(score), style={
+                    'color': color, 'fontSize': '56px',
+                    'fontWeight': '800', 'fontFamily': 'monospace', 'lineHeight': '1',
+                }),
+                html.Div('out of 100', style={
+                    'color': C['muted'], 'fontSize': '12px', 'marginTop': '4px',
+                }),
+                html.Div(verdict, style={
+                    'color': color, 'fontSize': '13px',
+                    'fontWeight': '700', 'marginTop': '8px',
+                }),
+            ], xs=12, md=2, className='mb-3 mb-md-0'),
+            dbc.Col([
+                html.P(summary, style={
+                    'color': C['text'], 'fontSize': '13px',
+                    'lineHeight': '1.7', 'marginBottom': '12px',
+                }),
+                html.Div('Signals being tracked (red = triggered, gray = OK):', style={
+                    'color': C['muted'], 'fontSize': '11px', 'marginBottom': '8px',
+                }),
+                html.Div(signal_pills, style={'display': 'flex', 'flexWrap': 'wrap'}),
+                html.Div('Hover over each signal to see what it means.', style={
+                    'color': C['muted'], 'fontSize': '11px', 'marginTop': '6px',
+                    'fontStyle': 'italic',
+                }),
+            ], xs=12, md=10),
+        ]),
+    ], style={**CARD, 'borderLeft': f'3px solid {color}'})
+
+
+# ── Market briefing (plain-English summary) ───────────────────────────────────
+
+def build_market_briefing(fred_df, spread, spy_return) -> html.Div:
+    bullets = []
+
+    try:
+        fed = fred_df['Federal Funds Rate'].dropna().iloc[-1]
+        infl = fred_df['CPI Inflation (Trimmed Mean)'].dropna().iloc[-1]
+        real = fed - infl
+        if real > 1.5:
+            bullets.append(('🏦', 'Fed Policy', f'The Fed\'s interest rate ({fed:.2f}%) is significantly higher than inflation ({infl:.1f}%). This is called a "restrictive" policy — it makes borrowing expensive to slow down the economy and cool inflation.'))
+        elif real > 0:
+            bullets.append(('🏦', 'Fed Policy', f'The Fed\'s rate ({fed:.2f}%) is slightly above inflation ({infl:.1f}%). Policy is mildly tight — the Fed is keeping a lid on things without slamming the brakes.'))
+        else:
+            bullets.append(('🏦', 'Fed Policy', f'The Fed\'s rate ({fed:.2f}%) is below inflation ({infl:.1f}%). This is called "loose" policy — cheap money encourages borrowing and investing, which can boost stocks.'))
+    except Exception:
+        pass
+
+    try:
+        sp = spread.dropna().iloc[-1]
+        if sp < 0:
+            bullets.append(('📉', 'Yield Curve', f'The yield curve is inverted (10Y−2Y = {sp:+.2f}%). Normally, long-term bonds pay more interest than short-term ones. When that flips, it often signals investors expect the economy to slow. This has preceded most US recessions.'))
+        else:
+            bullets.append(('📈', 'Yield Curve', f'The yield curve is normal (10Y−2Y = {sp:+.2f}%). Long-term bonds pay more than short-term ones — investors expect steady growth ahead.'))
+    except Exception:
+        pass
+
+    try:
+        vix = fred_df['VIX'].dropna().iloc[-1]
+        hy  = fred_df['High Yield Spread'].dropna().iloc[-1]
+        if vix >= 30 or hy >= 500:
+            bullets.append(('⚡', 'Market Stress', f'Stress indicators are elevated: VIX at {vix:.1f} (fear index) and high-yield bond spreads at {hy:.0f}bp. This means investors are nervous and riskier companies are paying a lot more to borrow money.'))
+        elif vix >= 20:
+            bullets.append(('🟡', 'Market Stress', f'Markets are a bit anxious: VIX at {vix:.1f}. Some uncertainty but nothing extreme. High-yield spreads at {hy:.0f}bp are normal.'))
+        else:
+            bullets.append(('✅', 'Market Stress', f'Markets are calm: VIX at {vix:.1f} and credit spreads at {hy:.0f}bp. Investors are not particularly worried right now.'))
+    except Exception:
+        pass
+
+    try:
+        infl = fred_df['CPI Inflation (Trimmed Mean)'].dropna().iloc[-1]
+        if infl > 4:
+            bullets.append(('💸', 'Inflation', f'Inflation is running hot at {infl:.1f}%. When prices rise this fast, the Fed raises rates to slow things down — and higher rates tend to push stock prices lower.'))
+        elif infl > 2:
+            bullets.append(('💸', 'Inflation', f'Inflation is {infl:.1f}%, above the Fed\'s 2% target but manageable. The Fed may keep rates elevated until this comes down.'))
+        else:
+            bullets.append(('💸', 'Inflation', f'Inflation is {infl:.1f}% — near or below the Fed\'s 2% target. This is good: it means the Fed has less reason to raise rates, which is positive for stocks.'))
+    except Exception:
+        pass
+
+    items = []
+    for icon, theme, text in bullets:
+        items.append(
+            dbc.Col(html.Div([
+                html.Div(f'{icon}  {theme.upper()}', style={
+                    'color': C['subtext'], 'fontSize': '10px',
+                    'fontWeight': '700', 'letterSpacing': '0.08em',
+                    'marginBottom': '8px',
+                }),
+                html.P(text, style={
+                    'color': C['text'], 'fontSize': '13px',
+                    'lineHeight': '1.7', 'margin': '0',
+                }),
+            ], style={**CARD, 'height': '100%'}),
+            xs=12, md=6, className='mb-3')
+        )
+
+    return dbc.Row(items)
+
+
+# ── Sector panel with real names ──────────────────────────────────────────────
+
+SECTOR_NAMES = {
+    'XLK':  'Technology',
+    'XLF':  'Finance & Banks',
+    'XLE':  'Energy & Oil',
+    'XLV':  'Healthcare',
+    'XLI':  'Industrials',
+    'XLC':  'Communication',
+    'XLY':  'Consumer (Discretionary)',
+    'XLP':  'Consumer (Staples)',
+    'XLU':  'Utilities',
+    'XLRE': 'Real Estate',
+    'XLB':  'Materials',
+    'SPY':  'S&P 500 (Total Market)',
+    'QQQ':  'Nasdaq 100 (Tech-Heavy)',
+    'DIA':  'Dow Jones 30',
+    'IWM':  'Small Cap Stocks',
+}
+
+SECTOR_EXPLAINERS = {
+    'XLK':  'Technology companies (Apple, Microsoft, Nvidia). Sensitive to interest rates — high rates hurt because future profits are worth less today.',
+    'XLF':  'Banks and financial companies. Profit from higher interest rates. Does well when the economy is growing.',
+    'XLE':  'Oil and gas companies. Moves with oil prices, which depend on global supply and demand.',
+    'XLV':  'Hospitals, drugmakers, insurance. Tends to hold up well during recessions — people still need healthcare.',
+    'XLI':  'Factories, construction, transportation. Tied to economic growth — does well in expansions.',
+    'XLC':  'Google, Meta, Netflix. Mix of tech-like growth companies and old-school media.',
+    'XLY':  'Amazon, Tesla, restaurants, hotels. People buy discretionary items when confident — sensitive to recessions.',
+    'XLP':  'Walmart, Procter & Gamble, food companies. Defensive — people buy basics regardless of the economy.',
+    'XLU':  'Electric and gas utilities. Slow-growing but pay dividends. Hurt by higher interest rates.',
+    'XLRE': 'REITs — companies that own property. Very sensitive to interest rates. Falls when rates rise.',
+    'XLB':  'Steel, chemicals, mining. Moves with global economic activity and commodity prices.',
+}
+
+
+# ── News panel ────────────────────────────────────────────────────────────────
+
+def build_news_panel(articles: list) -> html.Div:
+    if not articles:
+        return html.Div(
+            'No news available right now.',
+            style={'color': C['subtext'], 'fontSize': '13px', 'padding': '12px'}
+        )
+
+    rows = []
+    for i, art in enumerate(articles[:10]):
+        headline = art.get('headline', art.get('title', 'Untitled'))
+        url      = art.get('url', '#')
+        source   = art.get('source', '')
+        created  = art.get('created', art.get('datetime', ''))
+        try:
+            ts = datetime.utcfromtimestamp(int(created)).strftime('%b %d, %H:%M')
+        except Exception:
+            ts = str(created)[:10]
+
+        rows.append(html.Div([
+            html.Div([
+                html.Span(source.upper(), style={
+                    'color': C['accent'], 'fontSize': '10px',
+                    'fontWeight': '700', 'marginRight': '8px',
+                }),
+                html.Span(ts, style={'color': C['muted'], 'fontSize': '10px'}),
+            ], style={'marginBottom': '3px'}),
+            html.A(headline, href=url, target='_blank', style={
+                'color': C['text'], 'fontSize': '13px',
+                'textDecoration': 'none', 'lineHeight': '1.5',
+                'display': 'block',
+            }),
+            html.Hr(style={
+                'borderColor': C['border'], 'margin': '10px 0',
+                'opacity': '0.6',
+            }) if i < len(articles) - 1 else None,
+        ]))
+
+    return html.Div(rows, style=CARD)
+
+
+# ── Footer ────────────────────────────────────────────────────────────────────
+
+def build_footer() -> html.Div:
+    return html.Div(
+        dbc.Container(
+            html.P([
+                'Data sources: ',
+                html.A('FRED (Federal Reserve)', href='https://fred.stlouisfed.org', target='_blank',
+                       style={'color': C['accent']}),
+                ' · ',
+                html.A('Yahoo Finance', href='https://finance.yahoo.com', target='_blank',
+                       style={'color': C['accent']}),
+                ' · ',
+                html.A('Benzinga News', href='https://benzinga.com', target='_blank',
+                       style={'color': C['accent']}),
+                f'  •  Generated {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}',
+            ], style={'color': C['muted'], 'fontSize': '11px', 'margin': '0'}),
+            fluid=True,
+        ),
+        style={
+            'borderTop': f"1px solid {C['border']}",
+            'padding': '16px 0', 'marginTop': '40px',
+            'backgroundColor': C['surface'],
+        }
+    )
