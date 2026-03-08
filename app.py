@@ -320,11 +320,12 @@ def refresh_all(_):
     fred    = load_fred()
     sectors = load_sectors()
     spread  = compute_yield_spread(fred)
-    score   = compute_recession_score(fred, spread)
+    score   = compute_recession_score(fred)
     news    = get_market_news()
 
     from data import compute_sector_returns
-    spy_return = compute_sector_returns(sectors, 'YTD').get('SPY', 0.0)
+    _rets = compute_sector_returns(sectors, 'YTD')
+    spy_return = float(_rets['SPY']) if 'SPY' in _rets.index else 0.0
 
     return (
         build_kpi_row(fred, spread, spy_return),
@@ -350,4 +351,4 @@ def update_sectors(period):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8050, debug=False)
+    app.run(debug=True)
